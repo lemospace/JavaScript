@@ -89,17 +89,17 @@
 }
 
 .form .form-control.success i.fa-check-circle {
-  border-color: #2ecc71;
+  color: #2ecc71;
   visibility: visible;
 }
 
 .form .form-control.error i.fa-exclamation-circle {
-  border-color: #e74c3c;
+  color: #e74c3c;
   visibility: visible;
 }
 
 .form .form-control.error small {
-  border-color: #e74c3c;
+  color: #e74c3c;
   visibility: visible;
 }
 
