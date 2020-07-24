@@ -112,8 +112,6 @@ function logIn() {
             dataType: "text",
             success: function (serverResponse) {
               console.log(person);
-              //if (serverResponse == "success")
-              //window.location = "index.php";
             },
           });
         });
