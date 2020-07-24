@@ -57,12 +57,14 @@ function setErrorFor(input, message) {
   small.innerText = message;
 
   //add error class
-  formControl.ClassName = "form-control error";
+  formControl.classList.add("error");
+  formControl.classList.remove("success");
 }
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
-  formControl.ClassName = "form-control success";
+  formControl.classList.add("success");
+  formControl.classList.remove("error");
 }
 
 function isEmail(email) {
@@ -70,3 +72,74 @@ function isEmail(email) {
     email
   );
 }
+
+const submitBtn = document.querySelector("#submit");
+
+submitBtn.addEventListener("click", function () {
+  localStorage.setItem("username", username.value);
+  localStorage.setItem("email", email.value);
+  localStorage.setItem("password", password.value);
+  localStorage.setItem("password2", password2.value);
+});
+
+console.log(localStorage.getItem("username"));
+console.log(localStorage.getItem("email"));
+console.log(localStorage.getItem("password"));
+console.log(localStorage.getItem("password2"));
+
+//        facebook LogIn
+
+var person = { userID: "", name: "", accessToken: "", picture: "", email: "" };
+
+function logIn() {
+  FB.login(
+    function (response) {
+      if (response.status == "connected") {
+        person.userID = response.authResponse.userID;
+        person.accessToken = response.authResponse.accessToken;
+
+        FB.api("/me?fields=id,name,email,picture.type(large)", function (
+          userData
+        ) {
+          person.name = userData.name;
+          person.email = userData.email;
+          person.picture = userData.picture.data.url;
+
+          $.ajax({
+            url: "login.php",
+            method: "POST",
+            data: person,
+            dataType: "text",
+            success: function (serverResponse) {
+              console.log(person);
+              //if (serverResponse == "success")
+              //window.location = "index.php";
+            },
+          });
+        });
+      }
+    },
+    { scope: "public_profile, email" }
+  );
+}
+
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: "687942842053576",
+    autoLogAppEvents: true,
+    xfbml: true,
+    version: "v7.0",
+  });
+};
+
+(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");

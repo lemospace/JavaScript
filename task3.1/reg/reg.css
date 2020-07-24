@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   color: #000;
+  outline: none;
 }
 
 .main {
@@ -26,21 +27,22 @@
   width: 400px;
   max-width: 100%;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .form-header {
   background: #e9e7e7;
   border-bottom: 1px solid #f0f0f0;
-  padding: 20px 40px;
+  padding: 15px 30px;
 }
 
 .form {
-  padding: 30px 40px;
+  padding: 15px 40px;
 }
 
 .form .form-control {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
   position: relative;
 }
 
@@ -112,5 +114,17 @@
   font-size: 16px;
   padding: 10px;
   width: 100%;
+}
+
+.form .fb {
+  background: #5291ee;
+  border: 2px solid #5291ee;
+  color: #ffffff;
+  border-radius: 4px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=reg.css.map */
