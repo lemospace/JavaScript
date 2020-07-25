@@ -50,8 +50,12 @@
       })(document, "script", "facebook-jssdk");
 
       function statusChangeCallback(response) {
+        console.log(response);
         if (response.status === "connected") {
           console.log("Logged in and authenticated");
+          var accessToken = response.authResponse.accessToken;
+          console.log(accessToken);
+          sessionStorage.setItem("token", accessToken);
         } else {
           console.log("Not authenticated");
         }
@@ -63,6 +67,7 @@
         });
       }
     </script>
+
     <div class="wrapper">
       <header class="header">
         <img src="../images/header-image.jpg" alt="" />
