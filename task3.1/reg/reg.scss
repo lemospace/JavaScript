@@ -30,6 +30,7 @@
 
 .form {
     padding: 15px 40px;
+    display: grid;
 
     .form-control {
         margin-bottom: 5px;
@@ -105,17 +106,17 @@
         font-size: 16px;
         padding: 10px;
         width: 100%;
+        cursor: pointer;
     }
 
-    .fb {
-        background: #5291ee;
-        border: 2px solid #5291ee;
-        color: #ffffff;
-        border-radius: 4px;
-        display: block;
-        font-size: 16px;
-        padding: 10px;
-        width: 100%;
-        margin-top: 5px;
+    .fb-login-button {
+        justify-content: center;
+
+        iframe {
+            width: 100%;
+            margin-top: 5px;
+            cursor: pointer;
+            justify-content: center;
+        }
     }
 }

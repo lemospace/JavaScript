@@ -38,6 +38,8 @@
 
 .form {
   padding: 15px 40px;
+  display: -ms-grid;
+  display: grid;
 }
 
 .form .form-control {
@@ -114,17 +116,21 @@
   font-size: 16px;
   padding: 10px;
   width: 100%;
+  cursor: pointer;
 }
 
-.form .fb {
-  background: #5291ee;
-  border: 2px solid #5291ee;
-  color: #ffffff;
-  border-radius: 4px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
+.form .fb-login-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form .fb-login-button iframe {
   width: 100%;
   margin-top: 5px;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=reg.css.map */

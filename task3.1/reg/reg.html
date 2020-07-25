@@ -23,6 +23,46 @@
   </head>
 
   <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "303739317643543",
+          cookie: true,
+          xfbml: true,
+          version: "v7.0",
+        });
+
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+
+      function statusChangeCallback(response) {
+        if (response.status === "connected") {
+          console.log("Logged in and authenticated");
+        } else {
+          console.log("Not authenticated");
+        }
+      }
+
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      }
+    </script>
     <div class="wrapper">
       <header class="header">
         <img src="../images/header-image.jpg" alt="" />
@@ -87,15 +127,12 @@
             </div>
 
             <button type="submit" id="submit">Create</button>
-            <button
-              class="fb"
-              id="fb"
-              type="button"
-              onclick="logIn()"
-              value="Log In With Facebook"
+
+            <fb:login-button
+              scope="public_profile,email"
+              onlogin="checkLoginState();"
             >
-              Log In With Facebook
-            </button>
+            </fb:login-button>
           </form>
         </div>
       </div>
