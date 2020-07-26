@@ -49,7 +49,86 @@
       </aside>
       <div class="main">
         <div class="container">
-          <form action=""></form>
+          <div class="form-header"><h2>Complete Order</h2></div>
+          <form id="form" class="form">
+            <div class="model form-control">
+              <label for="longboards">Choose a longboard:</label>
+
+              <select name="cars" id="longboards">
+                <option value="Longboard Waves Bambino '26"
+                  >Longboard Waves Bambino '26</option
+                >
+                <option value="Longboard Waves Bamboostick '29"
+                  >Longboard Waves Bamboostick '29</option
+                >
+                <option value="Longboard Waves Soul Surfer '36"
+                  >Longboard Waves Soul Surfer '36
+                </option>
+                <option value="Longboard Arbor Pilsner Foundation `29"
+                  >Longboard Arbor Pilsner Foundation `29
+                </option>
+                <option value="Longboard Waves Sky Walker '43"
+                  >Longboard Waves Sky Walker '43</option
+                >
+              </select>
+
+              <div class="comments">
+                <textarea
+                  name=""
+                  id="comm"
+                  cols="30"
+                  rows="3"
+                  placeholder="Your comments"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="billing-address form-control">
+              <h3>Billing address</h3>
+              <label for="f-name"
+                >First name
+                <input type="text" id="f-name" />
+              </label>
+
+              <label for="s-name"
+                >Second name
+                <input type="text" id="s-name" />
+              </label>
+
+              <label for="street"
+                >Street address
+                <input type="text" id="street" />
+              </label>
+
+              <label for="state"
+                >State or Region
+                <select name="" id="state">
+                  <option value="Kharkiv">Kharkiv</option>
+                  <option value="Kyiv">Kyiv</option>
+                  <option value="Lviv">Lviv</option>
+                  <option value="Odessa">Odessa</option>
+                </select>
+              </label>
+
+              <label for="zip"
+                >Zip
+                <input type="text" id="zip" />
+              </label>
+
+              <label for="phone"
+                >Phone
+                <input type="tel" id="phone" />
+              </label>
+            </div>
+
+            <div class="delivery-address form-control"></div>
+
+            <div class="delivery-date form-control"></div>
+
+            <div class="payment form-control"></div>
+
+            <div class="create-account form-control"></div>
+          </form>
         </div>
       </div>
 

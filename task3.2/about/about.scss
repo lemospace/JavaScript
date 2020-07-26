@@ -1,9 +1,11 @@
 .main {
     padding: 0 40px;
+
     p {
         text-align: justify;
         padding-bottom: 20px;
     }
+
     .map-responsive {
         margin: 0 auto;
         overflow: hidden;
@@ -11,7 +13,9 @@
         position: relative;
         height: 0;
         width: 100%;
+        margin-bottom: 20px;
     }
+
     .map-responsive iframe {
         left: 0;
         top: 0;
