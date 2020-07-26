@@ -73,6 +73,25 @@
   width: 100%;
 }
 
+.form .form-control .same {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 10%;
+      grid-template-columns: 60% 10%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.form .form-control .same label {
+  margin: 0;
+}
+
+.form .form-control .same #same {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .form .form-control .success input {
   border-color: #2ecc71;
 }
@@ -103,6 +122,14 @@
   border-color: #e74c3c;
 }
 
+.form .form-control.success select {
+  border-color: #2ecc71;
+}
+
+.form .form-control.error select {
+  border-color: #e74c3c;
+}
+
 .form .form-control.success i.fa-check-circle {
   color: #2ecc71;
   visibility: visible;
@@ -124,7 +151,8 @@
   color: #ffffff;
   border-radius: 4px;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
   padding: 10px;
   width: 100%;
   cursor: pointer;
@@ -143,5 +171,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.form h2 {
+  border-bottom: 1px solid #000;
+  margin: 20px 0;
 }
 /*# sourceMappingURL=order.css.map */
