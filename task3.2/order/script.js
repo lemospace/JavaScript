@@ -16,6 +16,9 @@ const cardNumber = document.getElementById("cardNumber");
 const expityMonth = document.getElementById("expityMonth");
 const expityYear = document.getElementById("expityYear");
 const cvCode = document.getElementById("cvCode");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const password2 = document.getElementById("password2");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -42,6 +45,9 @@ function checkInputs() {
   const expityMonthValue = expityMonth.value.trim();
   const expityYearValue = expityYear.value.trim();
   const cvCodeValue = cvCode.value.trim();
+  const usernameValue = username.value.trim();
+  const passwordValue = password.value.trim();
+  const password2Value = password2.value.trim();
 
   if (modelValue === "") {
     setErrorFor(model, "The item is not selected");
@@ -156,6 +162,26 @@ function checkInputs() {
   } else {
     setErrorFor(cvCode, "Wrong format of CV code");
   }
+
+  if (usernameValue === "") {
+    setErrorFor(username, "Username can not be blank");
+  } else {
+    setSuccessFor(username);
+  }
+
+  if (passwordValue === "") {
+    setErrorFor(password, "Password can not be blank");
+  } else {
+    setSuccessFor(password);
+  }
+
+  if (password2Value === "") {
+    setErrorFor(password2, "Password can not be blank");
+  } else if (passwordValue !== password2Value) {
+    setErrorFor(password2, "Passwords do not match");
+  } else {
+    setSuccessFor(password2);
+  }
 }
 
 function setErrorFor(input, message) {
@@ -176,7 +202,7 @@ function setSuccessFor(input) {
   formControl.classList.remove("error");
 }
 
-var number = document.querySelector(".number");
+var number = document.querySelectorAll(".number");
 number.addEventListener("keypress", function (e) {
   var key = e.which;
   if (key < 48 || key > 57) {

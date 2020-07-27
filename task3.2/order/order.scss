@@ -104,6 +104,12 @@
         }
     }
 
+    .form-control.yy i {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+    }
+
     .form-control.success input {
         border-color: #2ecc71;
     }
