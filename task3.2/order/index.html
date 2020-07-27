@@ -57,8 +57,9 @@
             <div class="model">
               <h2>Item</h2>
               <div class="form-control">
+                <label for="longboards">Choose a longboard:</label>
                 <select name="longboards" id="longboards">
-                  <option value="model">Choose a longboard</option>
+                  <option value=""></option>
                   <option value="Longboard Waves Bambino '26"
                     >Longboard Waves Bambino '26</option
                   >
@@ -75,6 +76,9 @@
                     >Longboard Waves Sky Walker '43</option
                   >
                 </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
               </div>
 
               <div class="comments">
@@ -115,6 +119,7 @@
               <div class="form-control">
                 <label for="state1">State or Region </label>
                 <select name="" id="state1">
+                  <option value=""></option>
                   <option value="Kharkiv">Kharkiv</option>
                   <option value="Kyiv">Kyiv</option>
                   <option value="Lviv">Lviv</option>
@@ -133,7 +138,12 @@
               </div>
               <div class="form-control">
                 <label for="phone1">Phone </label
-                ><input type="tel" id="phone1" />
+                ><input
+                  type="tel"
+                  id="phone1"
+                  placeholder="begin with +380"
+                  class="number"
+                />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -143,7 +153,7 @@
             <div class="delivery-address">
               <h2>Delivery address</h2>
               <div class="same">
-                <label for="same">Same as my billing address </label>
+                <label>Same as my billing address </label>
                 <input type="checkbox" id="same" />
               </div>
 
@@ -171,6 +181,7 @@
               <div class="form-control">
                 <label for="state">State or Region </label>
                 <select name="" id="state">
+                  <option value=""></option>
                   <option value="Kharkiv">Kharkiv</option>
                   <option value="Kyiv">Kyiv</option>
                   <option value="Lviv">Lviv</option>
@@ -189,7 +200,12 @@
               </div>
               <div class="form-control">
                 <label for="phone">Phone </label>
-                <input type="tel" id="phone" />
+                <input
+                  type="text"
+                  id="phone"
+                  placeholder="begin with +380"
+                  class="number"
+                />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -207,39 +223,52 @@
               <div class="form-control">
                 <label for="cardNumber">
                   CARD NUMBER
-                  <input
-                    type="text"
-                    id="cardNumber"
-                    placeholder="Valid Card Number"
-                    autofocus
-                  />
                 </label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  placeholder="Valid Card Number"
+                  autofocus
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
               </div>
               <div class="form-control">
                 <label>
                   EXPIRY DATE
                 </label>
-
                 <input type="text" id="expityMonth" placeholder="MM" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
               </div>
               <div class="form-control">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <input
                   type="text"
                   class="form-control"
                   id="expityYear"
                   placeholder="YY"
                 />
+
+                <small>Error message</small>
               </div>
+
               <div class="form-control">
                 <label for="cvCode">
                   CV CODE
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="cvCode"
-                    placeholder="CVV"
-                  />
                 </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="cvCode"
+                  placeholder="CVV"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
               </div>
             </div>
 
@@ -259,6 +288,8 @@
         </div>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="../js/jquery.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript" src="../js/jquery-ui.min.js"></script>

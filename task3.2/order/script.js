@@ -12,6 +12,10 @@ const zip1 = document.getElementById("zip1");
 const zip = document.getElementById("zip");
 const phone1 = document.getElementById("phone1");
 const phone = document.getElementById("phone");
+const cardNumber = document.getElementById("cardNumber");
+const expityMonth = document.getElementById("expityMonth");
+const expityYear = document.getElementById("expityYear");
+const cvCode = document.getElementById("cvCode");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -34,49 +38,38 @@ function checkInputs() {
   const zipValue = zip.value.trim();
   const phone1Value = phone1.value.trim();
   const phoneValue = phone.value.trim();
+  const cardNumberValue = cardNumber.value.trim();
+  const expityMonthValue = expityMonth.value.trim();
+  const expityYearValue = expityYear.value.trim();
+  const cvCodeValue = cvCode.value.trim();
 
-  if (modelValue === "model") {
-    // show error
-    // add error class
+  if (modelValue === "") {
     setErrorFor(model, "The item is not selected");
   } else {
-    // add succes class
     setSuccessFor(model);
   }
 
   if (fName1Value === "") {
-    // show error
-    // add error class
     setErrorFor(fName1, "Name can not be blank");
   } else {
-    // add succes class
     setSuccessFor(fName1);
   }
 
   if (fNameValue === "") {
-    // show error
-    // add error class
     setErrorFor(fName, "Name can not be blank");
   } else {
-    // add succes class
     setSuccessFor(fName);
   }
 
   if (sName1Value === "") {
-    // show error
-    // add error class
     setErrorFor(sName1, "Name can not be blank");
   } else {
-    // add succes class
     setSuccessFor(sName1);
   }
 
   if (sNameValue === "") {
-    // show error
-    // add error class
     setErrorFor(sName, "Name can not be blank");
   } else {
-    // add succes class
     setSuccessFor(sName);
   }
 
@@ -118,21 +111,57 @@ function checkInputs() {
 
   if (phone1Value === "") {
     setErrorFor(phone1, "Phone number can not be blank");
-  } else {
+  } else if (phone1.value.length === 13) {
     setSuccessFor(phone1);
+  } else {
+    setErrorFor(phone1, "Wrong format of phone number");
   }
 
   if (phoneValue === "") {
     setErrorFor(phone, "Phone number can not be blank");
-  } else {
+  } else if (phone.value.length === 13) {
     setSuccessFor(phone);
+  } else {
+    setErrorFor(phone, "Wrong format of phone number");
+  }
+
+  if (cardNumberValue === "") {
+    setErrorFor(cardNumber, "Card number can not be blank");
+  } else if (cardNumber.value.length === 16) {
+    setSuccessFor(cardNumber);
+  } else {
+    setErrorFor(cardNumber, "Wrong format of card number");
+  }
+
+  if (expityMonthValue === "") {
+    setErrorFor(expityMonth, "Expity month can not be blank");
+  } else if (expityMonth.value.length === 2) {
+    setSuccessFor(expityMonth);
+  } else {
+    setErrorFor(expityMonth, "Wrong format of expity month");
+  }
+
+  if (expityYearValue === "") {
+    setErrorFor(expityYear, "Expity year can not be blank");
+  } else if (expityYear.value.length === 2) {
+    setSuccessFor(expityYear);
+  } else {
+    setErrorFor(expityYear, "Wrong format of expity year");
+  }
+
+  if (cvCodeValue === "") {
+    setErrorFor(cvCode, "CV code can not be blank");
+  } else if (cvCode.value.length === 3) {
+    setSuccessFor(cvCode);
+  } else {
+    setErrorFor(cvCode, "Wrong format of CV code");
   }
 }
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
-
+  console.log(formControl, small);
   //add error mesage inside small
   small.innerText = message;
 
@@ -147,4 +176,10 @@ function setSuccessFor(input) {
   formControl.classList.remove("error");
 }
 
-const submitBtn = document.querySelector("#submit");
+var number = document.querySelector(".number");
+number.addEventListener("keypress", function (e) {
+  var key = e.which;
+  if (key < 48 || key > 57) {
+    e.preventDefault();
+  }
+});

@@ -48,12 +48,11 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  grid-gap: 5px;
 }
 
 .form .form-control label {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .form .form-control input {
@@ -70,6 +69,12 @@
 }
 
 .form .form-control select {
+  width: 100%;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
   width: 100%;
 }
 
@@ -102,8 +107,8 @@
 
 .form .form-control i {
   position: absolute;
-  top: 35px;
-  right: 10px;
+  top: 40px;
+  right: 15px;
   visibility: hidden;
 }
 
