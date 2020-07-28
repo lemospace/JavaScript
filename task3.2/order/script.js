@@ -20,12 +20,6 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  checkInputs();
-});
-
 function checkInputs() {
   // get the values from the inputs
   const modelValue = model.value.trim();
@@ -51,137 +45,165 @@ function checkInputs() {
 
   if (modelValue === "") {
     setErrorFor(model, "The item is not selected");
+    return false;
   } else {
     setSuccessFor(model);
   }
 
   if (fName1Value === "") {
     setErrorFor(fName1, "Name can not be blank");
+    return false;
   } else {
     setSuccessFor(fName1);
   }
 
   if (fNameValue === "") {
     setErrorFor(fName, "Name can not be blank");
+    return false;
   } else {
     setSuccessFor(fName);
   }
 
   if (sName1Value === "") {
     setErrorFor(sName1, "Name can not be blank");
+    return false;
   } else {
     setSuccessFor(sName1);
   }
 
   if (sNameValue === "") {
     setErrorFor(sName, "Name can not be blank");
+    return false;
   } else {
     setSuccessFor(sName);
   }
 
   if (street1Value === "") {
     setErrorFor(street1, "Street can not be blank");
+    return false;
   } else {
     setSuccessFor(street1);
   }
 
   if (streetValue === "") {
     setErrorFor(street, "Street can not be blank");
+    return false;
   } else {
     setSuccessFor(street);
   }
 
   if (state1Value === "") {
     setErrorFor(state1, "State can not be blank");
+    return false;
   } else {
     setSuccessFor(state1);
   }
 
   if (stateValue === "") {
     setErrorFor(state, "State can not be blank");
+    return false;
   } else {
     setSuccessFor(state);
   }
 
   if (zip1Value === "") {
     setErrorFor(zip1, "Zip code can not be blank");
+    return false;
   } else {
     setSuccessFor(zip1);
   }
 
   if (zipValue === "") {
     setErrorFor(zip, "Zip code can not be blank");
+    return false;
   } else {
     setSuccessFor(zip);
   }
 
   if (phone1Value === "") {
     setErrorFor(phone1, "Phone number can not be blank");
+    return false;
   } else if (phone1.value.length === 13) {
     setSuccessFor(phone1);
   } else {
     setErrorFor(phone1, "Wrong format of phone number");
+    return false;
   }
 
   if (phoneValue === "") {
     setErrorFor(phone, "Phone number can not be blank");
+    return false;
   } else if (phone.value.length === 13) {
     setSuccessFor(phone);
   } else {
     setErrorFor(phone, "Wrong format of phone number");
+    return false;
   }
 
   if (cardNumberValue === "") {
     setErrorFor(cardNumber, "Card number can not be blank");
+    return false;
   } else if (cardNumber.value.length === 16) {
     setSuccessFor(cardNumber);
   } else {
     setErrorFor(cardNumber, "Wrong format of card number");
+    return false;
   }
 
   if (expityMonthValue === "") {
     setErrorFor(expityMonth, "Expity month can not be blank");
+    return false;
   } else if (expityMonth.value.length === 2) {
     setSuccessFor(expityMonth);
   } else {
     setErrorFor(expityMonth, "Wrong format of expity month");
+    return false;
   }
 
   if (expityYearValue === "") {
     setErrorFor(expityYear, "Expity year can not be blank");
+    return false;
   } else if (expityYear.value.length === 2) {
     setSuccessFor(expityYear);
   } else {
     setErrorFor(expityYear, "Wrong format of expity year");
+    return false;
   }
 
   if (cvCodeValue === "") {
     setErrorFor(cvCode, "CV code can not be blank");
+    return false;
   } else if (cvCode.value.length === 3) {
     setSuccessFor(cvCode);
   } else {
     setErrorFor(cvCode, "Wrong format of CV code");
+    return false;
   }
 
   if (usernameValue === "") {
     setErrorFor(username, "Username can not be blank");
+    return false;
   } else {
     setSuccessFor(username);
   }
 
   if (passwordValue === "") {
     setErrorFor(password, "Password can not be blank");
+    return false;
   } else {
     setSuccessFor(password);
   }
 
   if (password2Value === "") {
     setErrorFor(password2, "Password can not be blank");
+    return false;
   } else if (passwordValue !== password2Value) {
     setErrorFor(password2, "Passwords do not match");
+    return false;
   } else {
     setSuccessFor(password2);
   }
+  return true;
 }
 
 function setErrorFor(input, message) {
@@ -251,15 +273,39 @@ function populatedropdown(dayfield, monthfield, yearfield) {
 onload = function () {
   populatedropdown("d", "m", "y");
 };
+/*
+function test() {
+  if (document.getElementById("same").checked) {
+    document.getElementById("hide").hide;
+  } else {
+    document.getElementById("hide").show;
+  }
+} */
 
-const submitBtn = document.querySelector("#submit");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-submitBtn.addEventListener("click", function () {
-  localStorage.setItem("username", username.value);
-  localStorage.setItem("password", password.value);
-  localStorage.setItem("password2", password2.value);
+  if (checkInputs()) {
+    localStorage.setItem("model", model.value);
+    localStorage.setItem("fName1", fName1.value);
+    localStorage.setItem("fName", fName.value);
+    localStorage.setItem("sName1", sName1.value);
+    localStorage.setItem("sName", sName.value);
+    localStorage.setItem("street1", street1.value);
+    localStorage.setItem("street", street.value);
+    localStorage.setItem("state1", state1.value);
+    localStorage.setItem("state", state.value);
+    localStorage.setItem("zip1", zip1.value);
+    localStorage.setItem("zip", zip.value);
+    localStorage.setItem("phone1", phone1.value);
+    localStorage.setItem("phone", phone.value);
+    localStorage.setItem("cardNumber", cardNumber.value);
+    localStorage.setItem("expityMonth", expityMonth.value);
+    localStorage.setItem("expityYear", expityYear.value);
+    localStorage.setItem("cvCode", cvCode.value);
+    localStorage.setItem("username", username.value);
+    localStorage.setItem("password", password.value);
+    localStorage.setItem("password2", password2.value);
+    location.href = "result.html";
+  }
 });
-
-function myFunction() {
-  location.href = "result.html";
-}
