@@ -8,7 +8,7 @@
 
 .wrapper {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "a a a" "b c d" "e e e";
@@ -16,6 +16,7 @@
       grid-template-rows: 1fr auto 40px;
   -ms-grid-columns: 8% 1fr 8%;
       grid-template-columns: 8% 1fr 8%;
+  overflow: hidden;
 }
 
 .header {

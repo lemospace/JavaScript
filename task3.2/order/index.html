@@ -53,7 +53,7 @@
           <div class="form-header">
             <h1>Complete Order</h1>
           </div>
-          <form id="form" class="form">
+          <form id="form" class="form" action="result.html">
             <div class="model">
               <h2>Item</h2>
               <div class="form-control">
@@ -214,11 +214,10 @@
 
             <div class="delivery-date">
               <h2>Delivery date</h2>
-              <div class="date">
-                <input id="day" name="day" />
-                <input id="month" name="month" />
-                <input id="year" name="year" />
-              </div>
+
+              <select id="m" name="month"></select>
+              <select id="d" name="day"></select>
+              <select id="y" name="year"></select>
             </div>
 
             <div class="payment">
@@ -305,7 +304,9 @@
               </div>
             </div>
 
-            <button type="submit" id="submit">Submit</button>
+            <button onclick="myFunction()" type="submit" id="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>
@@ -321,6 +322,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="../js/jquery.js"></script>
     <script src="script.js"></script>
+
     <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
   </body>
 </html>
