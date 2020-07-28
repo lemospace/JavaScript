@@ -255,12 +255,9 @@ onload = function () {
 const submitBtn = document.querySelector("#submit");
 
 submitBtn.addEventListener("click", function () {
-  if (function checkInputs = setSuccess) {
-    localStorage.setItem("username", username.value);
-
-    localStorage.setItem("password", password.value);
-    localStorage.setItem("password2", password2.value);
-  }
+  localStorage.setItem("username", username.value);
+  localStorage.setItem("password", password.value);
+  localStorage.setItem("password2", password2.value);
 });
 
 function myFunction() {

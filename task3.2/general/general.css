@@ -26,12 +26,12 @@
   -ms-grid-column-span: 3;
   grid-area: a;
   overflow: hidden;
-  max-height: 350px;
+  max-height: 300px;
 }
 
 .header img {
   width: 100%;
-  max-height: 350px;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
