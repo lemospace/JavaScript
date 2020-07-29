@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reult</title>
+  </head>
+  <body>
+    <script>
+      function init() {
+        localStorage.getItem("model", model.value);
+        localStorage.getItem("fName1", fName1.value);
+        localStorage.getItem("sName1", sName1.value);
+        localStorage.getItem("street1", street1.value);
+        localStorage.getItem("state1", state1.value);
+        localStorage.getItem("zip1", zip1.value);
+        localStorage.getItem("phone1", phone1.value);
+        localStorage.getItem("fName", fName.value);
+        localStorage.getItem("sName", sName.value);
+        localStorage.getItem("street", street.value);
+        localStorage.getItem("state", state.value);
+        localStorage.getItem("zip", zip.value);
+        localStorage.getItem("phone", phone.value);
+        localStorage.getItem("cardNumber", cardNumber.value);
+        localStorage.getItem("expityMonth", expityMonth.value);
+        localStorage.getItem("expityYear", expityYear.value);
+        localStorage.getItem("cvCode", cvCode.value);
+        localStorage.getItem("username", username.value);
+        localStorage.getItem("password", password.value);
+        localStorage.getItem("password2", password2.value);
+        location.href = "result.html";
+      }
+    </script>
+    <div onload="init()" class="result" id="result"></div>
+  </body>
+</html>

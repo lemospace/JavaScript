@@ -209,8 +209,8 @@ function checkInputs() {
 }
 
 function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector("small");
+  var formControl = input.parentElement;
+  var small = formControl.querySelector("small");
   console.log(formControl, small);
   //add error mesage inside small
   small.innerText = message;
@@ -221,7 +221,7 @@ function setErrorFor(input, message) {
 }
 
 function setSuccessFor(input) {
-  const formControl = input.parentElement;
+  var formControl = input.parentElement;
   formControl.classList.add("success");
   formControl.classList.remove("error");
 }
@@ -285,9 +285,10 @@ function dpick(year, month, day, td) {
 }
 
 $().ready(function () {
-  $("#hide").live("click", function () {
-    if ($("#hide").is(":checked")) {
+  $("#same").change("click", function () {
+    if ($("#same").is(":checked")) {
       $(".hide").hide();
+      checkInputs() = false;
     } else {
       $(".hide").show();
     }
