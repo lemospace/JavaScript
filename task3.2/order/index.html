@@ -156,66 +156,87 @@
                 <label>Same as my billing address </label>
                 <input type="checkbox" id="same" />
               </div>
-
-              <div class="form-control">
-                <label for="f-name">First name </label>
-                <input type="text" id="f-name" class="field" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="s-name">Second name </label>
-                <input type="text" id="s-name" class="field" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="street">Street address </label>
-                <input type="text" id="street" class="field" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="state">State or Region </label>
-                <select name="" id="state" class="field">
-                  <option value=""></option>
-                  <option value="Kharkiv">Kharkiv</option>
-                  <option value="Kyiv">Kyiv</option>
-                  <option value="Lviv">Lviv</option>
-                  <option value="Odessa">Odessa</option>
-                </select>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="zip">Zip </label>
-                <input type="text" id="zip" class="field" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="phone">Phone </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="+380XXXXXXXXX"
-                  class="number field"
-                />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+              <div class="hide">
+                <div class="form-control">
+                  <label for="f-name">First name </label>
+                  <input type="text" id="f-name" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="s-name">Second name </label>
+                  <input type="text" id="s-name" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="street">Street address </label>
+                  <input type="text" id="street" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="state">State or Region </label>
+                  <select name="" id="state" class="field">
+                    <option value=""></option>
+                    <option value="Kharkiv">Kharkiv</option>
+                    <option value="Kyiv">Kyiv</option>
+                    <option value="Lviv">Lviv</option>
+                    <option value="Odessa">Odessa</option>
+                  </select>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="zip">Zip </label>
+                  <input type="text" id="zip" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="phone">Phone </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+380XXXXXXXXX"
+                    class="number field"
+                  />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
               </div>
             </div>
-            <h2>Delivery date</h2>
+
             <div class="delivery-date form-control">
-              <select id="m" name="month" class="field"></select>
-              <select id="d" name="day" class="field"></select>
-              <select id="y" name="year" class="field"></select>
+              <h2>Delivery date</h2>
+              <select name="" id="year">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+              <select name="" id="month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">Novenmer</option>
+                <option value="11">December</option>
+              </select>
+              <select name="" id="day"> </select>
               <small></small>
             </div>
 
