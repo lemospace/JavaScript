@@ -22,47 +22,6 @@ var password = document.getElementById("password");
 var password2 = document.getElementById("password2");
 var fields = form.querySelectorAll(".field");
 
-/*
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  var errors = form.querySelectorAll(".error");
-
-  for (var i = 0; i < errors.length; i++) {
-    errors[i].classList.remove("error");
-  }
-
-  for (var i = 0; i < fields.length; i++) {
-    if (!fields[i].value) {
-      console.log("field is blank", fields[i]);
-      document.querySelectorAll(".form-control").forEach(function (element) {
-        element.classList.add("error");
-      });
-
-      document.querySelectorAll("small").forEach(function (element) {
-        element.innerText = "Cannot be blank";
-      });
-      return false;
-    } else {
-      document.querySelectorAll(".form-control").forEach(function (element) {
-        element.classList.remove("error");
-      });
-
-      document.querySelectorAll("small").forEach(function (element) {
-        this.remove();
-      });
-    }
-  }
-  if (password.value !== password2.value) {
-    password2.parentElement.className += " error";
-
-    password2.parentElement.querySelector("small").innerText =
-      "Passwords do not match";
-    return false;
-  }
-*/
-
 function checkInputs() {
   // get the values from the inputs
   var modelValue = model.value.trim();
