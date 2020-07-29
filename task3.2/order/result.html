@@ -6,6 +6,26 @@
     <title>Reult</title>
   </head>
   <body>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+    <div id="result5"></div>
+    <div id="result6"></div>
+    <div id="result7"></div>
+    <div id="result8"></div>
+    <div id="result9"></div>
+    <div id="result10"></div>
+    <div id="result11"></div>
+    <div id="result12"></div>
+    <div id="result13"></div>
+    <div id="result14"></div>
+    <div id="result15"></div>
+    <div id="result16"></div>
+    <div id="result17"></div>
+    <div id="result18"></div>
+    <div id="result19"></div>
+    <div id="result20"></div>
     <script defer>
       var model = localStorage.getItem("model");
       var fName1 = localStorage.getItem("fName1");
@@ -28,32 +48,50 @@
       var password = localStorage.getItem("password");
       var password2 = localStorage.getItem("password2");
 
-      var result = document.getElementById("showResult");
+      var result1 = document.getElementById("result1");
+      var result2 = document.getElementById("result2");
+      var result3 = document.getElementById("result3");
+      var result4 = document.getElementById("result4");
+      var result5 = document.getElementById("result5");
+      var result6 = document.getElementById("result6");
+      var result7 = document.getElementById("result7");
+      var result8 = document.getElementById("result8");
+      var result9 = document.getElementById("result9");
+      var result10 = document.getElementById("result10");
+      var result11 = document.getElementById("result11");
+      var result12 = document.getElementById("result12");
+      var result13 = document.getElementById("result13");
+      var result14 = document.getElementById("result14");
+      var result15 = document.getElementById("result15");
+      var result16 = document.getElementById("result16");
+      var result17 = document.getElementById("result17");
+      var result18 = document.getElementById("result18");
+      var result19 = document.getElementById("result19");
+      var result20 = document.getElementById("result20");
 
       function showResult() {
-        result.innerHTML = model;
-        result.innerHTML = fName1;
-        result.innerHTML = sName1;
-        result.innerHTML = street1;
-        result.innerHTML = state1;
-        result.innerHTML = zip1;
-        result.innerHTML = phone1;
-        result.innerHTML = fName;
-        result.innerHTML = sName;
-        result.innerHTML = street;
-        result.innerHTML = state;
-        result.innerHTML = zip;
-        result.innerHTML = phone;
-        result.innerHTML = cardNumber;
-        result.innerHTML = expityMonth;
-        result.innerHTML = expityYear;
-        result.innerHTML = cvCode;
-        result.innerHTML = username;
-        result.innerHTML = password;
-        result.innerHTML = password2;
+        result1.innerHTML = model;
+        result2.innerHTML = fName1;
+        result3.innerHTML = sName1;
+        result4.innerHTML = street1;
+        result5.innerHTML = state1;
+        result6.innerHTML = zip1;
+        result7.innerHTML = phone1;
+        result8.innerHTML = fName;
+        result9.innerHTML = sName;
+        result10.innerHTML = street;
+        result11.innerHTML = state;
+        result12.innerHTML = zip;
+        result13.innerHTML = phone;
+        result14.innerHTML = cardNumber;
+        result15.innerHTML = expityMonth;
+        result16.innerHTML = expityYear;
+        result17.innerHTML = cvCode;
+        result18.innerHTML = username;
+        result19.innerHTML = password;
+        result20.innerHTML = password2;
       }
       showResult();
     </script>
-    <div class="result" id="showResult"></div>
   </body>
 </html>
