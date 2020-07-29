@@ -6,7 +6,7 @@
     <title>Reult</title>
   </head>
   <body>
-    <script>
+    <script defer>
       var model = localStorage.getItem("model");
       var fName1 = localStorage.getItem("fName1");
       var sName1 = localStorage.getItem("sName1");
@@ -28,9 +28,9 @@
       var password = localStorage.getItem("password");
       var password2 = localStorage.getItem("password2");
 
-      var result = document.getElementById("result");
+      var result = document.getElementById("showResult");
 
-      function showResultData() {
+      function showResult() {
         result.innerHTML = model;
         result.innerHTML = fName1;
         result.innerHTML = sName1;
@@ -53,6 +53,6 @@
         result.innerHTML = password2;
       }
     </script>
-    <div onload="init()" class="result" id="result"></div>
+    <div class="result" id="showResult"></div>
   </body>
 </html>

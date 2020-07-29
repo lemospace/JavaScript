@@ -20,7 +20,6 @@ var cvCode = document.getElementById("cvCode");
 var username = document.getElementById("username");
 var password = document.getElementById("password");
 var password2 = document.getElementById("password2");
-var fields = form.querySelectorAll(".field");
 
 function checkInputs() {
   // get the values from the inputs
