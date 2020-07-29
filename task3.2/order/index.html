@@ -58,7 +58,7 @@
               <h2>Item</h2>
               <div class="form-control">
                 <label for="longboards">Choose a longboard:</label>
-                <select name="longboards" id="longboards">
+                <select name="longboards" id="longboards" class="field">
                   <option value=""></option>
                   <option value="Longboard Waves Bambino '26"
                     >Longboard Waves Bambino '26</option
@@ -97,28 +97,28 @@
 
               <div class="form-control">
                 <label for="f-name1">First name </label>
-                <input type="text" id="f-name1" />
+                <input type="text" id="f-name1" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="s-name1">Second name </label>
-                <input type="text" id="s-name1" />
+                <input type="text" id="s-name1" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="street1">Street address </label>
-                <input type="text" id="street1" />
+                <input type="text" id="street1" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="state1">State or Region </label>
-                <select name="" id="state1">
+                <select name="" id="state1" class="field">
                   <option value=""></option>
                   <option value="Kharkiv">Kharkiv</option>
                   <option value="Kyiv">Kyiv</option>
@@ -131,7 +131,7 @@
               </div>
               <div class="form-control">
                 <label for="zip1">Zip </label>
-                <input type="text" id="zip1" />
+                <input type="text" id="zip1" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -142,7 +142,7 @@
                   type="tel"
                   id="phone1"
                   placeholder="+380XXXXXXXXX"
-                  class="number"
+                  class="number field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
@@ -159,28 +159,28 @@
 
               <div class="form-control">
                 <label for="f-name">First name </label>
-                <input type="text" id="f-name" />
+                <input type="text" id="f-name" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="s-name">Second name </label>
-                <input type="text" id="s-name" />
+                <input type="text" id="s-name" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="street">Street address </label>
-                <input type="text" id="street" />
+                <input type="text" id="street" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="state">State or Region </label>
-                <select name="" id="state">
+                <select name="" id="state" class="field">
                   <option value=""></option>
                   <option value="Kharkiv">Kharkiv</option>
                   <option value="Kyiv">Kyiv</option>
@@ -193,7 +193,7 @@
               </div>
               <div class="form-control">
                 <label for="zip">Zip </label>
-                <input type="text" id="zip" />
+                <input type="text" id="zip" class="field" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -204,20 +204,19 @@
                   type="tel"
                   id="phone"
                   placeholder="+380XXXXXXXXX"
-                  class="number"
+                  class="number field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
             </div>
-
-            <div class="delivery-date">
-              <h2>Delivery date</h2>
-
-              <select id="m" name="month"></select>
-              <select id="d" name="day"></select>
-              <select id="y" name="year"></select>
+            <h2>Delivery date</h2>
+            <div class="delivery-date form-control">
+              <select id="m" name="month" class="field"></select>
+              <select id="d" name="day" class="field"></select>
+              <select id="y" name="year" class="field"></select>
+              <small></small>
             </div>
 
             <div class="payment">
@@ -233,6 +232,7 @@
                   id="cardNumber"
                   placeholder="Valid Card Number"
                   autofocus
+                  class="field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
@@ -242,7 +242,12 @@
                 <label>
                   EXPIRY DATE
                 </label>
-                <input type="text" id="expityMonth" placeholder="MM" />
+                <input
+                  type="text"
+                  id="expityMonth"
+                  placeholder="MM"
+                  class="field"
+                />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -253,6 +258,7 @@
                   class="form-control"
                   id="expityYear"
                   placeholder="YY"
+                  class="field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
@@ -268,6 +274,7 @@
                   class="form-control"
                   id="cvCode"
                   placeholder="CVV"
+                  class="field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
@@ -279,14 +286,24 @@
               <h2>Create account?</h2>
               <div class="form-control">
                 <label for="username">Username</label>
-                <input id="username" type="text" placeholder="username" />
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="username"
+                  class="field"
+                />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="password" />
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="password"
+                  class="field"
+                />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -297,6 +314,7 @@
                   id="password2"
                   type="password"
                   placeholder="confirm password"
+                  class="field"
                 />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
