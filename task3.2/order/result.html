@@ -7,28 +7,50 @@
   </head>
   <body>
     <script>
-      function init() {
-        localStorage.getItem("model", model.value);
-        localStorage.getItem("fName1", fName1.value);
-        localStorage.getItem("sName1", sName1.value);
-        localStorage.getItem("street1", street1.value);
-        localStorage.getItem("state1", state1.value);
-        localStorage.getItem("zip1", zip1.value);
-        localStorage.getItem("phone1", phone1.value);
-        localStorage.getItem("fName", fName.value);
-        localStorage.getItem("sName", sName.value);
-        localStorage.getItem("street", street.value);
-        localStorage.getItem("state", state.value);
-        localStorage.getItem("zip", zip.value);
-        localStorage.getItem("phone", phone.value);
-        localStorage.getItem("cardNumber", cardNumber.value);
-        localStorage.getItem("expityMonth", expityMonth.value);
-        localStorage.getItem("expityYear", expityYear.value);
-        localStorage.getItem("cvCode", cvCode.value);
-        localStorage.getItem("username", username.value);
-        localStorage.getItem("password", password.value);
-        localStorage.getItem("password2", password2.value);
-        location.href = "result.html";
+      var model = localStorage.getItem("model");
+      var fName1 = localStorage.getItem("fName1");
+      var sName1 = localStorage.getItem("sName1");
+      var street1 = localStorage.getItem("street1");
+      var state1 = localStorage.getItem("state1");
+      var zip1 = localStorage.getItem("zip1");
+      var phone1 = localStorage.getItem("phone1");
+      var fName = localStorage.getItem("fName");
+      var sName = localStorage.getItem("sName");
+      var street = localStorage.getItem("street");
+      var state = localStorage.getItem("state");
+      var zip = localStorage.getItem("zip");
+      var phone = localStorage.getItem("phone");
+      var cardNumber = localStorage.getItem("cardNumber");
+      var expityMonth = localStorage.getItem("expityMonth");
+      var expityYear = localStorage.getItem("expityYear");
+      var cvCode = localStorage.getItem("cvCode");
+      var username = localStorage.getItem("username");
+      var password = localStorage.getItem("password");
+      var password2 = localStorage.getItem("password2");
+
+      var result = document.getElementById("result");
+
+      function showResultData() {
+        result.innerHTML = model;
+        result.innerHTML = fName1;
+        result.innerHTML = sName1;
+        result.innerHTML = street1;
+        result.innerHTML = state1;
+        result.innerHTML = zip1;
+        result.innerHTML = phone1;
+        result.innerHTML = fName;
+        result.innerHTML = sName;
+        result.innerHTML = street;
+        result.innerHTML = state;
+        result.innerHTML = zip;
+        result.innerHTML = phone;
+        result.innerHTML = cardNumber;
+        result.innerHTML = expityMonth;
+        result.innerHTML = expityYear;
+        result.innerHTML = cvCode;
+        result.innerHTML = username;
+        result.innerHTML = password;
+        result.innerHTML = password2;
       }
     </script>
     <div onload="init()" class="result" id="result"></div>
