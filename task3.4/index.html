@@ -4,6 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 3.4.</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Customer Page</h1>
+      </div>
+      <div class="username">
+        <h3>Personal Data</h3>
+        <div class="fName">
+          <input
+            type="text"
+            id="fName"
+            class="fName"
+            placeholder="First name"
+          />
+        </div>
+        <div class="sName">
+          <input
+            type="text"
+            id="sName"
+            class="sName"
+            placeholder="Second name"
+          />
+        </div>
+      </div>
+      <div class="date">
+        <h3>Date of Purchase</h3>
+        <div class="firstBuy">
+          <input type="date" id="fb" class="fb" />
+          <label for="fb">First Buy</label>
+        </div>
+        <div class="nextBuy">
+          <input type="date" id="nb" class="nb" />
+          <label for="nb">Next Buy</label>
+        </div>
+      </div>
+      <div class="payment">
+        <h3>Payment Details</h3>
+        <div class="methods">
+          <label for="cc">Credit Card</label>
+          <input type="radio" id="cc" name="method" />
+          <label for="pp">Paypal</label>
+          <input type="radio" id="pp" name="method" />
+          <label for="cash">Cash</label>
+          <input type="radio" id="cash" name="method" />
+        </div>
+        <div class="cardNumber">
+          <input type="text" placeholder="Card Number" />
+        </div>
+        <div class="details">
+          <input type="text" id="cvc" placeholder="Card CVC" />
+          <input type="text" id="mm" placeholder="MM" />
+          <input type="text" id="yy" placeholder="YY" />
+        </div>
+      </div>
+      <button id="btn">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
