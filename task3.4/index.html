@@ -51,19 +51,19 @@
         <div class="payment">
           <h3>Payment Details</h3>
           <div class="methods">
-            <input type="radio" id="cc" name="method" />
+            <input type="radio" id="cc" name="method" value="Credit Card" />
             <label for="cc" class="cc">
               <i class="fas fa-credit-card"></i> Credit Card</label
             >
-            <input type="radio" id="pp" name="method" />
+            <input type="radio" id="pp" name="method" value="Paypal" />
             <label for="pp"> <i class="fab fa-cc-paypal"></i> Paypal</label>
-            <input type="radio" id="cash" name="method" />
+            <input type="radio" id="cash" name="method" value="Cash"/>
             <label for="cash">
               <i class="fas fa-money-bill-wave"></i> Cash</label
             >
           </div>
           <div class="cardNumber">
-            <input type="number" placeholder="Card Number" />
+            <input type="number" placeholder="Card Number" id="cardNumber" />
           </div>
           <div class="details">
             <input type="number" id="cvc" maxlength="3" placeholder="Card CVC" />
