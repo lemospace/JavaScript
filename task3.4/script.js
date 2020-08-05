@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
     }
   }
 
-  let name = new Name();
+  let name = new Name(firstName, lastName);
   name.getFullName();
   console.log(name.getFullName());
 
@@ -58,7 +58,7 @@ form.addEventListener("submit", function (e) {
     }
   }
 
-  let newPrice = new Discount();
+  let newPrice = new Discount(discount, price);
   newPrice.getNewPrice();
   console.log(newPrice.getNewPrice());
 
