@@ -12,8 +12,8 @@ form.addEventListener("submit", function (e) {
     .value;
   var cardNumber = document.getElementById("cardNumber").value;
   var cvc = document.getElementById("cvc").value;
-  var mm = document.getElementById("mm").value;
-  var yy = document.getElementById("yy").value;
+  var month = document.getElementById("mm").value;
+  var year = document.getElementById("yy").value;
 
   var price = document.getElementById("price").value;
   var cdiscount = document.getElementById("cdiscount");
@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
   }
 
   let name = new Name(firstName, lastName);
-  name.getFullName();
+
   console.log(name.getFullName());
 
   //Create a object for calculating and storing discount
@@ -59,7 +59,7 @@ form.addEventListener("submit", function (e) {
   }
 
   let newPrice = new Discount(discount, price);
-  newPrice.getNewPrice();
+
   console.log(newPrice.getNewPrice());
 
   class Person {
@@ -70,8 +70,8 @@ form.addEventListener("submit", function (e) {
       paymentMethod,
       cardNumber,
       cvc,
-      mm,
-      yy,
+      month,
+      year,
       newPrice
     ) {
       this.name = name;
@@ -80,8 +80,8 @@ form.addEventListener("submit", function (e) {
       this.paymentMethod = paymentMethod;
       this.cardNumber = cardNumber;
       this.cvc = cvc;
-      this.mm = mm;
-      this.yy = yy;
+      this.month = month;
+      this.year = year;
       this.discount = discount;
       this.newPrice = newPrice;
     }
@@ -97,10 +97,10 @@ form.addEventListener("submit", function (e) {
     paymentMethod,
     cardNumber,
     cvc,
-    mm,
-    yy,
+    month,
+    year,
     newPrice
   );
-  person.getFullInfo();
+
   console.log(person.getFullInfo());
 });
