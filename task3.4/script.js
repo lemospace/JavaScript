@@ -20,9 +20,6 @@ form.addEventListener("submit", function (e) {
   var newprice = document.getElementById("newprice");
   var discount = 5;
 
-  //Create a object with its own properties and methods
-  //to store all user information entered in the form.
-
   //Create Name object for storing First and Last name
   class Name {
     constructor(firstName, lastName) {
