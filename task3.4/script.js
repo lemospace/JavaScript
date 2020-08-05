@@ -22,7 +22,7 @@ btn.addEventListener("submit", function (e) {
 
   class Person {
     constructor(
-      Name,
+      name,
       firstBuy,
       nextBuy,
       paymentMethod,
@@ -30,9 +30,9 @@ btn.addEventListener("submit", function (e) {
       cvc,
       mm,
       yy,
-      discount,
-      price
+      newPrice
     ) {
+      this.name = name;
       this.firstBuy = firstBuy;
       this.nextBuy = nextBuy;
       this.paymentMethod = paymentMethod;
@@ -41,7 +41,7 @@ btn.addEventListener("submit", function (e) {
       this.mm = mm;
       this.yy = yy;
       this.discount = discount;
-      this.price = price;
+      this.newPrice = newPrice;
     }
     getFullInfo() {
       return this;
