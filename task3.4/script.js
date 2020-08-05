@@ -1,23 +1,24 @@
 var btn = document.getElementById("btn");
 var form = document.getElementById("form");
-var firstName = document.getElementById("fName").value;
-var lastName = document.getElementById("sName").value;
-var firstBuy = document.getElementById("fb").value;
-var nextBuy = document.getElementById("nb").value;
-var paymentMethod = document.querySelector('input[name="method"]:checked')
-  .value;
-var cardNumber = document.getElementById("cardNumber").value;
-var cvc = document.getElementById("cvc").value;
-var mm = document.getElementById("mm").value;
-var yy = document.getElementById("yy").value;
-
-var price = document.getElementById("price").value;
-var cdiscount = document.getElementById("cdiscount");
-var newprice = document.getElementById("newprice");
-var discount = 5;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  var firstName = document.getElementById("fName").value;
+  var lastName = document.getElementById("sName").value;
+  var firstBuy = document.getElementById("fb").value;
+  var nextBuy = document.getElementById("nb").value;
+  var paymentMethod = document.querySelector('input[name="method"]:checked')
+    .value;
+  var cardNumber = document.getElementById("cardNumber").value;
+  var cvc = document.getElementById("cvc").value;
+  var mm = document.getElementById("mm").value;
+  var yy = document.getElementById("yy").value;
+
+  var price = document.getElementById("price").value;
+  var cdiscount = document.getElementById("cdiscount");
+  var newprice = document.getElementById("newprice");
+  var discount = 5;
 
   //Create a object with its own properties and methods
   //to store all user information entered in the form.
