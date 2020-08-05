@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 5 - About us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="../general/general.css" />
+    <link rel="stylesheet" href="reg.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "303739317643543",
+          cookie: true,
+          xfbml: true,
+          version: "v7.0",
+        });
+
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+
+      function statusChangeCallback(response) {
+        console.log(response);
+        if (response.status === "connected") {
+          console.log("Logged in and authenticated");
+          var accessToken = response.authResponse.accessToken;
+          console.log(accessToken);
+          sessionStorage.setItem("token", accessToken);
+        } else {
+          console.log("Not authenticated");
+        }
+      }
+
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      }
+    </script>
+
+    <div class="wrapper">
+      <header class="header">
+        <img src="../images/header-image.jpg" alt="" />
+      </header>
+      <aside class="aside aside-1">
+        <div class="nav home">
+          <a href="../index.html">
+            <img src="https://img.icons8.com/ios/50/000000/home-page.png"
+          /></a>
+          <p>Home page</p>
+        </div>
+        <div class="nav about-us">
+          <a href="../about/index.html">
+            <img src="https://img.icons8.com/ios/50/000000/info.png"
+          /></a>
+          <p>About us</p>
+        </div>
+        <div class="nav contact">
+          <a href="../contact/index.html">
+            <img src="https://img.icons8.com/ios/50/000000/phone-message.png"
+          /></a>
+          <p>Contact</p>
+        </div>
+      </aside>
+      <div class="main">
+        <div class="container">
+          <div class="form-header">
+            <h2>Create account</h2>
+          </div>
+          <form id="form" class="form">
+            <div class="form-control">
+              <label for="username">Username</label>
+              <input id="username" type="text" placeholder="username" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="email" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="password" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="password2">Confirm your password</label>
+              <input
+                id="password2"
+                type="password"
+                placeholder="confirm password"
+              />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <button type="submit" id="submit">Create</button>
+
+            <fb:login-button
+              scope="public_profile,email"
+              onlogin="checkLoginState();"
+            >
+            </fb:login-button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="aside aside-2"></aside>
+      <footer class="footer">
+        <div>
+          &copy; lemospace | 2020
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

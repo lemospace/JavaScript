@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3.3.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section id="images-carousel">
+      <div class="img-carousel-container">
+        <div class="img-carousel">
+          <div>
+            <img src="images/1.jpg" alt="" onclick="openModal();" />
+          </div>
+          <div>
+            <img src="images/2.jpg" alt="" onclick="openModal();" />
+          </div>
+          <div>
+            <img src="images/3.jpg" alt="" onclick="openModal();" />
+          </div>
+        </div>
+        <button id="prev" class="prev">
+          <i class="fas fa-chevron-left fa-2x"></i>
+        </button>
+        <button id="next" class="next">
+          <i class="fas fa-chevron-right fa-2x"></i>
+        </button>
+      </div>
+    </section>
+
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()"
+        ><i class="fas fa-times"></i
+      ></span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <img src="images/1.jpg" style="width: 100%;" />
+        </div>
+
+        <div class="mySlides">
+          <img src="images/2.jpg" style="width: 100%;" />
+        </div>
+
+        <div class="mySlides">
+          <img src="images/3.jpg" style="width: 100%;" />
+        </div>
+
+        <a class="prevM" onclick="plusSlides(-1)">
+          <i class="fas fa-chevron-left fa-2x"></i>
+        </a>
+        <a class="nextM" onclick="plusSlides(1)">
+          <i class="fas fa-chevron-right fa-2x"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

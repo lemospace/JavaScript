@@ -1,0 +1,206 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  outline: none;
+}
+
+.main {
+  max-height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: scroll;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 100%;
+  margin: auto auto;
+  overflow: hidden;
+}
+
+.form-header {
+  background: #e9e7e7;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 30px;
+}
+
+.form {
+  padding: 15px 40px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.form .form-control {
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+}
+
+.form .form-control label {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.form .form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form .form-control textarea {
+  width: 100%;
+}
+
+.form .form-control select {
+  width: 100%;
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form .form-control .same {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 10%;
+      grid-template-columns: 60% 10%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.form .form-control .same label {
+  margin: 0;
+}
+
+.form .form-control .same #same {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.form .form-control .success input {
+  border-color: #2ecc71;
+}
+
+.form .form-control .error input {
+  border-color: #e74c3c;
+}
+
+.form .form-control i {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  visibility: hidden;
+}
+
+.form .form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form .delivery-date select {
+  width: auto;
+  margin: 0;
+  font-size: 100%;
+  padding: 5px 10px 5px 10px;
+  font-family: Segoe UI, Helvetica, sans-serif;
+  border: 0;
+  border: 1px solid #D0D0D0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+.form .form-control.yy i {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+
+.form .form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form .form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form .form-control.success select {
+  border-color: #2ecc71;
+}
+
+.form .form-control.error select {
+  border-color: #e74c3c;
+}
+
+.form .form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form .form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form .form-control.error small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form button {
+  background: #2ed573;
+  border: 2px solid #2ed573;
+  color: #ffffff;
+  border-radius: 4px;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.form .fb-login-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form .fb-login-button iframe {
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form h2 {
+  border-bottom: 1px solid #000;
+  margin: 20px 0;
+}
+/*# sourceMappingURL=order.css.map */
