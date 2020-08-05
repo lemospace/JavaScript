@@ -1,6 +1,20 @@
 let btn = document.getElementById("btn");
+let firstName = document.getElementById("fName").value;
+let lastName = document.getElementById("sName").value;
+let firstBuy = document.getElementById("fb").value;
+let nextBuy = document.getElementById("nb").value;
+let paymentMethod = document.querySelector('input[name="method"]:checked')
+  .value;
+let cardNumber = document.getElementById("cardNumber").value;
+let cvc = document.getElementById("cvc").value;
+let mm = document.getElementById("mm").value;
+let yy = document.getElementById("yy").value;
 
-btn.addEventListener("click", function (e) {
+let price = document.getElementById("price").value;
+let cdiscount = document.getElementById("cdiscount");
+let newprice = document.getElementById("newprice");
+
+btn.addEventListener("submit", function (e) {
   e.preventDefault();
 
   //Create a object with its own properties and methods
@@ -8,8 +22,7 @@ btn.addEventListener("click", function (e) {
 
   class Person {
     constructor(
-      firstName,
-      lastName,
+      Name,
       firstBuy,
       nextBuy,
       paymentMethod,
@@ -20,35 +33,40 @@ btn.addEventListener("click", function (e) {
       discount,
       price
     ) {
-      this.firstName = document.getElementById("fName").value;
-      this.lastName = document.getElementById("sName").value;
-
-      this.firstBuy = document.getElementById("fb").value;
-      this.nextBuy = document.getElementById("nb").value;
-      this.paymentMethod = document.querySelector(
-        'input[name="method"]:checked'
-      ).value;
-      this.cardNumber = document.getElementById("cardNumber").value;
-      this.cvc = document.getElementById("cvc").value;
-      this.mm = document.getElementById("mm").value;
-      this.yy = document.getElementById("yy").value;
-
-      this.discount = 5;
-      this.price = document.getElementById("price").value;
+      this.firstBuy = firstBuy;
+      this.nextBuy = nextBuy;
+      this.paymentMethod = paymentMethod;
+      this.cardNumber = cardNumber;
+      this.cvc = cvc;
+      this.mm = mm;
+      this.yy = yy;
+      this.discount = discount;
+      this.price = price;
     }
     getFullInfo() {
       return this;
     }
   }
 
-  let person = new Person();
+  let person = new Person(
+    name,
+    firstBuy,
+    nextBuy,
+    paymentMethod,
+    cardNumber,
+    cvc,
+    mm,
+    yy,
+    newPrice
+  );
   person.getFullInfo();
   console.log(person.getFullInfo());
 
   //Create Name object for storing First and Last name
-  class Name extends Person {
+  class Name {
     constructor(firstName, lastName) {
-      super();
+      this.firstName = firstName;
+      this.lastName = lastName;
     }
     getFullName() {
       return this.firstName + " " + this.lastName;
@@ -60,15 +78,13 @@ btn.addEventListener("click", function (e) {
   console.log(name.getFullName());
 
   //Create a object for calculating and storing discount
-  class Discount extends Person {
+  class Discount {
     constructor(discount, price) {
-      super();
+      this.discount = discount;
+      this.price = price;
     }
     getNewPrice() {
       let discount = 5;
-      let price = document.getElementById("price").value;
-      let cdiscount = document.getElementById("cdiscount");
-      let newprice = document.getElementById("newprice");
       cdiscount.innerHTML = "You will save: " + (price * discount) / 100 + "$";
       newprice.innerHTML =
         "New price will be: " + (price - (price * discount) / 100) + "$";
