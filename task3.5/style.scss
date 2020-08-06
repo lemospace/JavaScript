@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin: 30px auto;
+    text-align: center;
+    width: 700px;
+
+    .current-weather {
+        width: 200px;
+        margin: 0 auto;
+
+        .inner {
+            margin: 0 auto;
+            width: 160px;
+
+            .city {
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: 900;
+            }
+
+            .icon {
+                line-height: 0px;
+            }
+
+            .forecast {
+                font-size: 46px;
+                color: #44bd32;
+                line-height: 56px;
+                text-align: center;
+                font-weight: 900;
+            }
+
+            .disclaimer {
+                font-size: 18px;
+                margin-bottom: 30px;
+                color: #929292;
+                text-align: center;
+                font-weight: 900;
+            }
+        }
+
+        .features {
+            font-size: 12px;
+            font-weight: 100;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            color: rgb(78, 78, 78);
+            text-align: start;
+
+            li {
+                list-style-type: none;
+                padding-left: 7px;
+            }
+
+            .border {
+                border-bottom: 1px solid rgb(167, 167, 167);
+            }
+
+            .left {
+                border: 1px solid rgb(167, 167, 167);
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+
+            .right {
+                border: 1px solid rgb(167, 167, 167);
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+    }
+
+    .five-days {
+        width: 100%;
+        margin-top: 40px;
+        color: rgb(78, 78, 78);
+
+        .header {
+            text-align: start;
+
+            h2 {
+                padding-left: 10px;
+            }
+        }
+
+        .day {
+            .date {
+                font-size: 18px;
+                border: 1px solid rgb(167, 167, 167);
+                background: #eee;
+                padding-left: 10px;
+            }
+
+            .hours {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                border-bottom: 1px solid rgb(167, 167, 167);
+
+                .time {
+                    align-self: center;
+                }
+
+                .details {
+                    align-self: center;
+                }
+            }
+        }
+    }
+}

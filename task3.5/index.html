@@ -4,14 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 3.5.</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body onload="getLocation()">
-    <div id="latitude"></div>
-    <div id="longitude"></div>
-    <div class="display">
-      <h1 class="name"></h1>
-      <p class="desc"></p>
-      <p class="temp"></p>
+    <div class="container">
+      <div class="current-weather">
+        <div class="inner">
+          <p class="city"></p>
+          <hr />
+
+          <p class="icon"></p>
+          <p class="forecast"></p>
+
+          <p class="disclaimer"></p>
+        </div>
+        <div class="features">
+          <ul class="left">
+            <li class="border">Wind</li>
+            <li class="border">Cloudiness</li>
+            <li class="border">Pressure</li>
+            <li class="border">Humidity</li>
+            <li class="border">Sunrise</li>
+            <li class="border">Sunset</li>
+            <li>Geo coords</li>
+          </ul>
+
+          <ul class="right">
+            <li class="one border"></li>
+            <li class="two border"></li>
+            <li class="three border"></li>
+            <li class="four border"></li>
+            <li class="five border"></li>
+            <li class="six border"></li>
+            <li class="seven"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="five-days">
+        <div class="header">
+          <h2 class="city2"></h2>
+        </div>
+        <div class="day">
+          <div class="date"></div>
+          <div class="hours">
+            <div class="time"></div>
+            <div class="icon2"></div>
+            <div class="details"></div>
+          </div>
+          <div class="hours hours2">
+            <div class="time time2"></div>
+            <div class="icon2 icon22"></div>
+            <div class="details details2"></div>
+          </div>
+          <div class="hours hours3">
+            <div class="time time3"></div>
+            <div class="icon2 icon23"></div>
+            <div class="details details3"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="weather.js"></script>
   </body>

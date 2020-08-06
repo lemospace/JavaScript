@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin: 30px auto;
+  text-align: center;
+  width: 700px;
+}
+
+.container .current-weather {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.container .current-weather .inner {
+  margin: 0 auto;
+  width: 160px;
+}
+
+.container .current-weather .inner .city {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.container .current-weather .inner .icon {
+  line-height: 0px;
+}
+
+.container .current-weather .inner .forecast {
+  font-size: 46px;
+  color: #44bd32;
+  line-height: 56px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.container .current-weather .inner .disclaimer {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #929292;
+  text-align: center;
+  font-weight: 900;
+}
+
+.container .current-weather .features {
+  font-size: 12px;
+  font-weight: 100;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 55%;
+      grid-template-columns: 45% 55%;
+  color: #4e4e4e;
+  text-align: start;
+}
+
+.container .current-weather .features li {
+  list-style-type: none;
+  padding-left: 7px;
+}
+
+.container .current-weather .features .border {
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.container .current-weather .features .left {
+  border: 1px solid #a7a7a7;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.container .current-weather .features .right {
+  border: 1px solid #a7a7a7;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.container .five-days {
+  width: 100%;
+  margin-top: 40px;
+  color: #4e4e4e;
+}
+
+.container .five-days .header {
+  text-align: start;
+}
+
+.container .five-days .header h2 {
+  padding-left: 10px;
+}
+
+.container .five-days .day .date {
+  font-size: 18px;
+  border: 1px solid #a7a7a7;
+  background: #eee;
+  padding-left: 10px;
+}
+
+.container .five-days .day .hours {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.container .five-days .day .hours .time {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container .five-days .day .hours .details {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=style.css.map */
