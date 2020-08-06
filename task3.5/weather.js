@@ -1,27 +1,30 @@
-$(document).ready(function () {
-    $.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
-        type: "GET",
-        dataType: "jsonp",
-        success: function (data) {
-            var widget = showResults(data)
+var x = document.getElementById("latitude");
+var y = document.getElementById("longitude");
 
+var latValue = x.value;
+var lonValue = y.value;
 
-            $("#showWeather").html(widget);
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-            $("#city").val('');
-        }
+function showPosition(position) {
+  x.innerHTML = position.coords.latitude;
+  y.innerHTML = position.coords.longitude;
+}
 
+var WeatherAPIKey = "62adbc2bffd1bb07adc82799df6242b9";
+var weatherLLQueryURL =
+  "http://api.openweathermap.org/data/2.5/weather?lat=" +
+  latValue +
+  "&lon=" +
+  lonValue +
+  "&appid=" +
+  WeatherAPIKey;
+console.log(weatherLLQueryURL);
 
-  $.get(
-    "http://api.openweathermap.org/data/2.5/weather",
-    {
-      id: "706483",
-      appid: "62adbc2bffd1bb07adc82799df6242b9",
-    },
-    function (data) {
-      console.log(data);
-    }
-  );
-});
 //{ "id": 706483, "name": "Kharkiv", "state": "", "country": "UA", "coord": { "lon": 36.25, "lat": 50.0 } },
