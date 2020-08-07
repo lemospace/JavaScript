@@ -28,14 +28,9 @@ function getURL(position) {
     WeatherAPIKey;
 
   getWeatherByUrl(weatherLLQueryURL, updateCurrentWeather);
-  get5WeatherByUrl(weather5DaysURL, update5DaysWeather);
+  getWeatherByUrl(weather5DaysURL, update5DaysWeather);
 }
 function getWeatherByUrl(url, callback) {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => callback(data));
-}
-function get5WeatherByUrl(url, callback) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => callback(data));
@@ -94,66 +89,89 @@ function update5DaysWeather(data) {
     data.city.name +
     ", " +
     data.city.country;
-  document.querySelector(".time").innerHTML = data.list[0]["dt_txt"];
-  document.querySelector(
-    ".icon2"
-  ).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[0]["weather"][0]["icon"]}@2x.png">`;
-  document.querySelector(".details").innerHTML =
-    Math.round(data.list[0]["main"]["temp"]) -
-    273 +
-    "&deg; " +
-    "<i>" +
-    data.list[0]["weather"][0]["description"] +
-    "</i>" +
-    ",   " +
-    data.list[0]["wind"]["speed"] +
-    " m/s, " +
-    "<br>" +
-    "clouds " +
-    data.list[0]["clouds"]["all"] +
-    "%, " +
-    data.list[0]["main"]["pressure"] +
-    " hpa";
 
-  document.querySelector(".time2").innerHTML = data.list[1]["dt_txt"];
-  document.querySelector(
-    ".icon22"
-  ).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[1]["weather"][0]["icon"]}@2x.png">`;
-  document.querySelector(".details2").innerHTML =
-    Math.round(data.list[1]["main"]["temp"]) -
-    273 +
-    "&deg; " +
-    "<i>" +
-    data.list[1]["weather"][0]["description"] +
-    "</i>" +
-    ",   " +
-    data.list[1]["wind"]["speed"] +
-    " m/s, " +
-    "<br>" +
-    "clouds " +
-    data.list[1]["clouds"]["all"] +
-    "%, " +
-    data.list[1]["main"]["pressure"] +
-    " hpa";
+  var time = document.createElement("div");
+  time.className = "time";
+  document.querySelector(".hours").appendChild(time);
 
-  document.querySelector(".time3").innerHTML = data.list[2]["dt_txt"];
-  document.querySelector(
-    ".icon23"
-  ).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[2]["weather"][0]["icon"]}@2x.png">`;
-  document.querySelector(".details3").innerHTML =
-    Math.round(data.list[2]["main"]["temp"]) -
-    273 +
-    "&deg; " +
-    "<i>" +
-    data.list[2]["weather"][0]["description"] +
-    "</i>" +
-    ",   " +
-    data.list[2]["wind"]["speed"] +
-    " m/s, " +
-    "<br>" +
-    "clouds " +
-    data.list[2]["clouds"]["all"] +
-    "%, " +
-    data.list[2]["main"]["pressure"] +
-    " hpa";
+  var icon = document.querySelector(".icon2");
+  var details = document.querySelector(".details");
+
+  for (let i = 0; i < 15; i++) {
+    time.innerHTML += `${data.list[`${i}`]["dt_txt"]}`;
+    icon.innerHTML += `<img src="https://openweathermap.org/img/wn/${
+      data.list[`${i}`]["weather"][0]["icon"]
+    }@2x.png">`;
+    details.innerHTML += `${
+      Math.round(data.list[`${i}`]["main"]["temp"]) - 273
+    }&deg; 
+        <i> 
+        ${data.list[`${i}`]["weather"][0]["description"]}</i>,   
+        ${data.list[`${i}`]["wind"]["speed"]}
+        m/s, 
+        <br> 
+        clouds 
+        ${data.list[`${i}`]["clouds"]["all"]}%, 
+        ${data.list[`${i}`]["main"]["pressure"]}
+         hpa`;
+  }
+
+  // document.querySelector(".time").innerHTML = data.list[0]["dt_txt"];
+  // document.querySelector(
+  //   ".icon2"
+  // ).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[0]["weather"][0]["icon"]}@2x.png">`;
+  // document.querySelector(".details").innerHTML = `${
+  //   Math.round(data.list[0]["main"]["temp"]) - 273
+  // }&deg;
+  //       <i>
+  //       ${data.list[0]["weather"][0]["description"]}</i>,
+  //       ${data.list[0]["wind"]["speed"]}
+  //       m/s,
+  //       <br>
+  //       clouds
+  //       ${data.list[0]["clouds"]["all"]}%,
+  //       ${data.list[0]["main"]["pressure"]}
+  //        hpa`;
+  //
+  //document.querySelector(".hours2.time").innerHTML = data.list[1]["dt_txt"];
+  //document.querySelector(
+  //  ".hours2.icon2"
+  //).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[1]["weather"][0]["icon"]}@2x.png">`;
+  //document.querySelector(".hours2.details").innerHTML =
+  //  Math.round(data.list[1]["main"]["temp"]) -
+  //  273 +
+  //  "&deg; " +
+  //  "<i>" +
+  //  data.list[1]["weather"][0]["description"] +
+  //  "</i>" +
+  //  ",   " +
+  //  data.list[1]["wind"]["speed"] +
+  //  " m/s, " +
+  //  "<br>" +
+  //  "clouds " +
+  //  data.list[1]["clouds"]["all"] +
+  //  "%, " +
+  //  data.list[1]["main"]["pressure"] +
+  //  " hpa";
+  //
+  //document.querySelector(".hours3.time").innerHTML = data.list[2]["dt_txt"];
+  //document.querySelector(
+  //  ".hours3.icon2"
+  //).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[2]["weather"][0]["icon"]}@2x.png">`;
+  //document.querySelector(".hours3.details").innerHTML =
+  //  Math.round(data.list[2]["main"]["temp"]) -
+  //  273 +
+  //  "&deg; " +
+  //  "<i>" +
+  //  data.list[2]["weather"][0]["description"] +
+  //  "</i>" +
+  //  ",   " +
+  //  data.list[2]["wind"]["speed"] +
+  //  " m/s, " +
+  //  "<br>" +
+  //  "clouds " +
+  //  data.list[2]["clouds"]["all"] +
+  //  "%, " +
+  //  data.list[2]["main"]["pressure"] +
+  //  " hpa";
 }
