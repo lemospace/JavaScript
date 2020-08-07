@@ -76,6 +76,8 @@ function updateCurrentWeather(data) {
     "[" + data.coord["lon"] + ", " + data.coord["lat"] + "]";
 }
 
+// документ готов, можно работать!
+
 function update5DaysWeather(data) {
   console.log(data);
   document.querySelector(".city2").textContent =
@@ -89,10 +91,13 @@ function update5DaysWeather(data) {
     date.className = "date";
     document.querySelector(".day").appendChild(date);
     date.innerHTML = `August ${7 + i}`;
-    var hours = document.createElement("div");
-    hours.className = "hours";
-    hours.id = `hours${i}`;
-    document.querySelector(".day").appendChild(hours);
+    //var hours = document.createElement("div");
+    //hours.className = "hours";
+    //hours.id = `hours${i}`;
+    //document.querySelector(".day").appendChild(hours);
+
+    var day = document.querySelector(".day");
+    day.innerHTML = `<div class="hours" id="hours${i}"></div>`;
 
     var time = document.createElement("div");
     time.className = "time";
@@ -100,8 +105,10 @@ function update5DaysWeather(data) {
     icon.className = "icon2";
     var details = document.createElement("div");
     details.className = "details";
-    console.log(`#hours${i}`);
-    document.getElementsById(`hours${i}`).appendChild(time);
+
+    var hours = document.querySelector(`.hours${i}`);
+
+    hours.appendChild(time);
 
     document.querySelector(".hours").appendChild(icon);
     document.querySelector(".hours").appendChild(details);
