@@ -57,24 +57,18 @@ function updateCurrentWeather(data) {
   var sunsetDate = new Date(sunset * 1000);
   var sunriseHours = sunriseDate.getHours();
   var sunriseMinutes = "0" + sunriseDate.getMinutes();
-  var sunriseSeconds = "0" + sunriseDate.getSeconds();
+  //var sunriseSeconds = "0" + sunriseDate.getSeconds();
   var sunsetHours = sunsetDate.getHours();
   var sunsetMinutes = "0" + sunsetDate.getMinutes();
-  var sunsetSeconds = "0" + sunsetDate.getSeconds();
+  //var sunsetSeconds = "0" + sunsetDate.getSeconds();
 
-  var formatedTimeRise =
-    sunriseHours +
-    ":" +
-    sunriseMinutes.substr(-2) +
-    ":" +
-    sunriseSeconds.substr(-2);
+  var formatedTimeRise = sunriseHours + ":" + sunriseMinutes.substr(-2); //+
+  //":" +
+  //sunriseSeconds.substr(-2);
 
-  var formatedTimeSet =
-    sunsetHours +
-    ":" +
-    sunsetMinutes.substr(-2) +
-    ":" +
-    sunsetSeconds.substr(-2);
+  var formatedTimeSet = sunsetHours + ":" + sunsetMinutes.substr(-2); //+
+  // ":" +
+  // sunsetSeconds.substr(-2);
 
   document.querySelector(".five").innerHTML = formatedTimeRise;
   document.querySelector(".six").innerHTML = formatedTimeSet;
@@ -90,19 +84,33 @@ function update5DaysWeather(data) {
     ", " +
     data.city.country;
 
-  var time = document.createElement("div");
-  time.className = "time";
-  document.querySelector(".hours").appendChild(time);
-
-  var icon = document.querySelector(".icon2");
-  var details = document.querySelector(".details");
-
   for (let i = 0; i < 15; i++) {
-    time.innerHTML += `${data.list[`${i}`]["dt_txt"]}`;
-    icon.innerHTML += `<img src="https://openweathermap.org/img/wn/${
+    var date = document.createElement("div");
+    date.className = "date";
+    document.querySelector(".day").appendChild(date);
+    date.innerHTML = `August ${7 + i}`;
+    var hours = document.createElement("div");
+    hours.className = "hours";
+    hours.id = `hours${i}`;
+    document.querySelector(".day").appendChild(hours);
+
+    var time = document.createElement("div");
+    time.className = "time";
+    var icon = document.createElement("div");
+    icon.className = "icon2";
+    var details = document.createElement("div");
+    details.className = "details";
+    console.log(`#hours${i}`);
+    document.getElementsById(`hours${i}`).appendChild(time);
+
+    document.querySelector(".hours").appendChild(icon);
+    document.querySelector(".hours").appendChild(details);
+
+    time.innerHTML = `${data.list[`${i}`]["dt_txt"]}`;
+    icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${
       data.list[`${i}`]["weather"][0]["icon"]
     }@2x.png">`;
-    details.innerHTML += `${
+    details.innerHTML = `${
       Math.round(data.list[`${i}`]["main"]["temp"]) - 273
     }&deg; 
         <i> 
