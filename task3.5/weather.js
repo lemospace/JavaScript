@@ -87,17 +87,43 @@ function update5DaysWeather(data) {
     data.city.country;
 
   for (let i = 0; i < 15; i++) {
-    var date = document.createElement("div");
-    date.className = "date";
-    document.querySelector(".day").appendChild(date);
-    date.innerHTML = `August ${7 + i}`;
-    //var hours = document.createElement("div");
-    //hours.className = "hours";
-    //hours.id = `hours${i}`;
-    //document.querySelector(".day").appendChild(hours);
+    var now = new Date();
+    now.setDate(now.getDate() + i / 3);
+    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Nov",
+      "Dec",
+    ];
+    var fullDate =
+      now.getDate() +
+      " " +
+      months[now.getMonth()] +
+      " " +
+      now.getFullYear() +
+      ", " +
+      days[now.getDay()];
 
-    var day = document.querySelector(".day");
-    day.innerHTML = `<div class="hours" id="hours${i}"></div>`;
+    if (i % 3 == 0) {
+      var date = document.createElement("div");
+      date.className = "date";
+      document.querySelector(".day").appendChild(date);
+
+      date.innerHTML = fullDate;
+    }
+
+    var hours = document.createElement("div");
+    hours.id = `hours_${i}`;
+    hours.className = "hours";
+    document.querySelector(`.day`).appendChild(hours);
 
     var time = document.createElement("div");
     time.className = "time";
@@ -106,14 +132,18 @@ function update5DaysWeather(data) {
     var details = document.createElement("div");
     details.className = "details";
 
-    var hours = document.querySelector(`.hours${i}`);
+    document.querySelector(`#hours_${i}`).appendChild(time);
 
-    hours.appendChild(time);
+    document.querySelector(`#hours_${i}`).appendChild(icon);
+    document.querySelector(`#hours_${i}`).appendChild(details);
 
-    document.querySelector(".hours").appendChild(icon);
-    document.querySelector(".hours").appendChild(details);
+    let timeformat = `${data.list[`${i}`]["dt"]}`;
+    var timeformatDate = new Date(timeformat * 1000);
+    var timeformatHours = timeformatDate.getHours();
+    var timeformatMinutes = "0" + timeformatDate.getMinutes();
+    var formatedTime = timeformatHours + ":" + timeformatMinutes.substr(-2); //+
+    time.innerHTML = formatedTime;
 
-    time.innerHTML = `${data.list[`${i}`]["dt_txt"]}`;
     icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${
       data.list[`${i}`]["weather"][0]["icon"]
     }@2x.png">`;
