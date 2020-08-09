@@ -86,9 +86,9 @@ function update5DaysWeather(data) {
     ", " +
     data.city.country;
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < data.list.length; i++) {
     var now = new Date();
-    now.setDate(now.getDate() + i / 3);
+    now.setDate(now.getDate() + i / 8);
     var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var months = [
       "Jan",
@@ -112,7 +112,7 @@ function update5DaysWeather(data) {
       ", " +
       days[now.getDay()];
 
-    if (i % 3 == 0) {
+    if (i % 8 == 0) {
       var date = document.createElement("div");
       date.className = "date";
       document.querySelector(".day").appendChild(date);
