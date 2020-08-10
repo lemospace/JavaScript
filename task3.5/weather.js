@@ -76,8 +76,6 @@ function updateCurrentWeather(data) {
     "[" + data.coord["lon"] + ", " + data.coord["lat"] + "]";
 }
 
-// документ готов, можно работать!
-
 function update5DaysWeather(data) {
   console.log(data);
   document.querySelector(".city2").textContent =
@@ -87,8 +85,14 @@ function update5DaysWeather(data) {
     data.city.country;
 
   for (let i = 0; i < data.list.length; i++) {
+    if (`${data.list[`${i + 1}`]["dt"]}` % 86400 == 0) {
+      var date = document.createElement("div");
+      date.className = "date";
+      document.querySelector(".day").appendChild(date);
+      date.innerHTML = fullDate;
+    }
     var now = new Date();
-    now.setDate(now.getDate() + i / 8);
+    now.setDate(now.getDate() + 1 + i / 8);
     var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var months = [
       "Jan",
@@ -111,14 +115,6 @@ function update5DaysWeather(data) {
       now.getFullYear() +
       ", " +
       days[now.getDay()];
-
-    if (i % 8 == 0) {
-      var date = document.createElement("div");
-      date.className = "date";
-      document.querySelector(".day").appendChild(date);
-
-      date.innerHTML = fullDate;
-    }
 
     var hours = document.createElement("div");
     hours.id = `hours_${i}`;
@@ -160,63 +156,4 @@ function update5DaysWeather(data) {
         ${data.list[`${i}`]["main"]["pressure"]}
          hpa`;
   }
-
-  // document.querySelector(".time").innerHTML = data.list[0]["dt_txt"];
-  // document.querySelector(
-  //   ".icon2"
-  // ).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[0]["weather"][0]["icon"]}@2x.png">`;
-  // document.querySelector(".details").innerHTML = `${
-  //   Math.round(data.list[0]["main"]["temp"]) - 273
-  // }&deg;
-  //       <i>
-  //       ${data.list[0]["weather"][0]["description"]}</i>,
-  //       ${data.list[0]["wind"]["speed"]}
-  //       m/s,
-  //       <br>
-  //       clouds
-  //       ${data.list[0]["clouds"]["all"]}%,
-  //       ${data.list[0]["main"]["pressure"]}
-  //        hpa`;
-  //
-  //document.querySelector(".hours2.time").innerHTML = data.list[1]["dt_txt"];
-  //document.querySelector(
-  //  ".hours2.icon2"
-  //).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[1]["weather"][0]["icon"]}@2x.png">`;
-  //document.querySelector(".hours2.details").innerHTML =
-  //  Math.round(data.list[1]["main"]["temp"]) -
-  //  273 +
-  //  "&deg; " +
-  //  "<i>" +
-  //  data.list[1]["weather"][0]["description"] +
-  //  "</i>" +
-  //  ",   " +
-  //  data.list[1]["wind"]["speed"] +
-  //  " m/s, " +
-  //  "<br>" +
-  //  "clouds " +
-  //  data.list[1]["clouds"]["all"] +
-  //  "%, " +
-  //  data.list[1]["main"]["pressure"] +
-  //  " hpa";
-  //
-  //document.querySelector(".hours3.time").innerHTML = data.list[2]["dt_txt"];
-  //document.querySelector(
-  //  ".hours3.icon2"
-  //).innerHTML = `<img src="https://openweathermap.org/img/wn/${data.list[2]["weather"][0]["icon"]}@2x.png">`;
-  //document.querySelector(".hours3.details").innerHTML =
-  //  Math.round(data.list[2]["main"]["temp"]) -
-  //  273 +
-  //  "&deg; " +
-  //  "<i>" +
-  //  data.list[2]["weather"][0]["description"] +
-  //  "</i>" +
-  //  ",   " +
-  //  data.list[2]["wind"]["speed"] +
-  //  " m/s, " +
-  //  "<br>" +
-  //  "clouds " +
-  //  data.list[2]["clouds"]["all"] +
-  //  "%, " +
-  //  data.list[2]["main"]["pressure"] +
-  //  " hpa";
 }
