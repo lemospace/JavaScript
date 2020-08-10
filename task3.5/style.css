@@ -11,7 +11,6 @@ body {
 
 .container {
   margin: 30px auto;
-  text-align: center;
   width: 700px;
 }
 
@@ -29,6 +28,8 @@ body {
   margin-top: 20px;
   font-size: 24px;
   font-weight: 900;
+  text-align: center;
+  border-bottom: 2px solid #dbdada;
 }
 
 .container .current-weather .inner .icon {
@@ -91,6 +92,7 @@ body {
 
 .container .five-days .header {
   text-align: start;
+  border-bottom: 2px solid #dbdada;
 }
 
 .container .five-days .header h2 {
@@ -99,17 +101,21 @@ body {
 
 .container .five-days .day .date {
   font-size: 18px;
-  border: 1px solid #a7a7a7;
+  border: 1px solid #dbdada;
   background: #eee;
-  padding-left: 10px;
+  padding: 5px 20px;
+  text-align: start;
 }
 
 .container .five-days .day .hours {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 1px solid #a7a7a7;
+  -ms-grid-columns: 10% 50% 40%;
+      grid-template-columns: 10% 50% 40%;
+  border-bottom: 1px solid #dbdada;
+  padding-left: 20px;
+  padding-right: 10px;
+  color: dimgray;
 }
 
 .container .five-days .day .hours .time {
@@ -122,5 +128,17 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.container .five-days .day .hours .details .descr {
+  color: #4b4a4a;
+  margin: 0 10px;
+}
+
+.container .five-days .day .hours .details .degrees {
+  background: #44bd32;
+  border-radius: 10px;
+  padding: 0 10px;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

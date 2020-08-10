@@ -85,7 +85,7 @@ function update5DaysWeather(data) {
     data.city.country;
 
   for (let i = 0; i < data.list.length; i++) {
-    if (`${data.list[`${i + 1}`]["dt"]}` % 86400 == 0) {
+    if (data.list[i + 1]["dt"] % 86400 == 0) {
       var date = document.createElement("div");
       date.className = "date";
       document.querySelector(".day").appendChild(date);
@@ -133,7 +133,7 @@ function update5DaysWeather(data) {
     document.querySelector(`#hours_${i}`).appendChild(icon);
     document.querySelector(`#hours_${i}`).appendChild(details);
 
-    let timeformat = `${data.list[`${i}`]["dt"]}`;
+    let timeformat = data.list[i]["dt"];
     var timeformatDate = new Date(timeformat * 1000);
     var timeformatHours = timeformatDate.getHours();
     var timeformatMinutes = "0" + timeformatDate.getMinutes();
@@ -143,14 +143,17 @@ function update5DaysWeather(data) {
     icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${
       data.list[`${i}`]["weather"][0]["icon"]
     }@2x.png">`;
-    details.innerHTML = `${
-      Math.round(data.list[`${i}`]["main"]["temp"]) - 273
-    }&deg; 
-        <i> 
-        ${data.list[`${i}`]["weather"][0]["description"]}</i>,   
+    details.innerHTML = `
+      <span class="degrees"> ${
+        Math.round(data.list[`${i}`]["main"]["temp"]) - 273
+      }&deg;C</span>  
+      <span class="descr">
+         <i> 
+        ${data.list[`${i}`]["weather"][0]["description"]}</i>  </span> 
+        <br>  
         ${data.list[`${i}`]["wind"]["speed"]}
         m/s, 
-        <br> 
+        
         clouds 
         ${data.list[`${i}`]["clouds"]["all"]}%, 
         ${data.list[`${i}`]["main"]["pressure"]}
