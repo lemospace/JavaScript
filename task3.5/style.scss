@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin: 30px auto;
+    width: 700px;
+
+    .current-weather {
+        width: 200px;
+        margin: 0 auto;
+
+        .inner {
+            margin: 0 auto;
+            width: 160px;
+
+            .city {
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: 900;
+                text-align: center;
+                border-bottom: 2px solid rgb(219, 218, 218);
+            }
+
+            .icon {
+                line-height: 0px;
+            }
+
+            .forecast {
+                font-size: 46px;
+                color: #44bd32;
+                line-height: 56px;
+                text-align: center;
+                font-weight: 900;
+            }
+
+            .disclaimer {
+                font-size: 18px;
+                margin-bottom: 30px;
+                color: #929292;
+                text-align: center;
+                font-weight: 900;
+            }
+        }
+
+        .features {
+            font-size: 12px;
+            font-weight: 100;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            color: rgb(78, 78, 78);
+            text-align: start;
+
+            li {
+                list-style-type: none;
+                padding-left: 7px;
+            }
+
+            .border {
+                border-bottom: 1px solid rgb(167, 167, 167);
+            }
+
+            .left {
+                border: 1px solid rgb(167, 167, 167);
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+
+            .right {
+                border: 1px solid rgb(167, 167, 167);
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+    }
+
+    .five-days {
+        width: 100%;
+        margin-top: 40px;
+        color: rgb(78, 78, 78);
+
+        .header {
+            text-align: start;
+            border-bottom: 2px solid rgb(219, 218, 218);
+
+            h2 {
+                padding-left: 10px;
+            }
+        }
+
+        .day {
+            .date {
+                font-size: 18px;
+                border: 1px solid rgb(219, 218, 218);
+                background: #eee;
+                padding: 5px 20px;
+                text-align: start;
+            }
+
+            .hours {
+                display: grid;
+                grid-template-columns: 10% 50% 40%;
+                border-bottom: 1px solid rgb(219, 218, 218);
+                padding-left: 20px;
+                padding-right: 10px;
+                color: rgb(105, 105, 105);
+
+                .time {
+                    align-self: center;
+                }
+
+                .details {
+                    align-self: center;
+
+                    .descr {
+                        color: rgb(75, 74, 74);
+                        margin: 0 10px;
+                    }
+
+                    .degrees {
+                        background: #44bd32;
+                        border-radius: 10px;
+                        padding: 0 10px;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
