@@ -28,7 +28,7 @@ body {
             width: 100%;
             height: 35px;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-top: 10px;
             padding: 0 10px;
             border: 2px solid   #487eb0;
             border-radius: 5px;
@@ -41,7 +41,8 @@ body {
         }
 
         h3 {
-            margin: 13px 0;
+            margin-top: 40px;
+            margin-bottom: 5px;
         }
 
         .chexkboxes {
@@ -54,7 +55,7 @@ body {
             label {
                 position: relative;
                 width: 100%;
-                margin-bottom: 10px;
+                margin-top: 10px;
                 display: inline-block;
                 cursor: pointer;
                 text-align: center;
@@ -106,15 +107,43 @@ body {
                 overflow: hidden;
             }
         }
+
+        small {
+            display: none;
+        }
+
+        .success input {
+            border-color: #2ecc71;
+        }
+
+        .error input {
+            border-color: #e74c3c;
+        }
+
+        .form-control.success input {
+            border-color: #2ecc71;
+        }
+
+        .form-control.error input {
+            border-color: #e74c3c;
+        }
+
+        .form-control.error small {
+            color: #e74c3c;
+            display: block;
+        }
     }
 }
 
 .output {
     .data {
-        min-height: 200px;
         margin: 40px auto;
         padding: 20px 30px;
         border-radius: 10px;
         background: #eee;
+
+        div {
+            color: #000;
+        }
     }
 }
