@@ -10,33 +10,23 @@ form.addEventListener("submit", function (e) {
 
   checkInputs();
 
-  var usernameValue = document.getElementById("username").value.trim();
-  var emailValue = document.getElementById("email").value.trim();
-  var passwordValue = document.getElementById("password").value.trim();
-  var password2Value = document.getElementById("password2").value.trim();
   var prefers = document.querySelectorAll('input[type="checkbox"]:checked');
   var usernameOut = document.querySelector(".username-out");
   var emailOut = document.querySelector(".email-out");
   var detailsOut = document.querySelector(".details-out");
 
   class User {
-    constructor(
-      usernameValue,
-      passwordValue,
-      password2Value,
-      emailValue,
-      prefers
-    ) {
-      this.usernameValue = usernameValue;
-      this.passwordValue = passwordValue;
-      this.password2Value = password2Value;
-      this.emailValue = emailValue;
+    constructor(username, password, password2, email, prefers) {
+      this.username = username;
+      this.password = password;
+      this.password2 = password2;
+      this.email = email;
       this.prefers = prefers;
     }
 
     getData() {
-      usernameOut.innerHTML = usernameValue;
-      emailOut.innerHTML = emailValue;
+      usernameOut.innerHTML = username.value;
+      emailOut.innerHTML = email.value;
       for (var prefer of prefers) {
         var preferDiv = document.createElement("div");
         preferDiv.className = "pref";
@@ -48,10 +38,10 @@ form.addEventListener("submit", function (e) {
   }
 
   let user = new User(
-    usernameValue,
-    passwordValue,
-    password2Value,
-    emailValue,
+    username.value,
+    password.value,
+    password2.value,
+    email.value,
     prefers
   );
   console.log(user.getData());
@@ -59,13 +49,10 @@ form.addEventListener("submit", function (e) {
 
 function checkInputs() {
   var usernameValue = username.value.trim();
-  var emailValue = email.value.trim();
-  var passwordValue = password.value.trim();
-  var password2Value = password2.value.trim();
 
-  if (usernameValue === "") {
+  if (username.value === "") {
     setErrorFor(username, "Username can not be blank");
-  } else if (!isUsername(usernameValue)) {
+  } else if (!isUsername(username.value)) {
     setErrorFor(
       username,
       "Username should be more than 3 symbols long and may include the symbols '-' and '_'. "
@@ -74,17 +61,17 @@ function checkInputs() {
     setSuccessFor(username);
   }
 
-  if (emailValue === "") {
+  if (email.value === "") {
     setErrorFor(email, "Email can not be blank");
-  } else if (!isEmail(emailValue)) {
+  } else if (!isEmail(email.value)) {
     setErrorFor(email, "Email is not valid");
   } else {
     setSuccessFor(email);
   }
 
-  if (passwordValue === "") {
+  if (password.value === "") {
     setErrorFor(password, "Password can not be blank");
-  } else if (!isPassword(passwordValue)) {
+  } else if (!isPassword(password.value)) {
     setErrorFor(
       password,
       "Password should be more than 7 symbols long and include at least one numeric symbol."
@@ -93,9 +80,9 @@ function checkInputs() {
     setSuccessFor(password);
   }
 
-  if (password2Value === "") {
+  if (password2.value === "") {
     setErrorFor(password2, "Password can not be blank");
-  } else if (passwordValue !== password2Value) {
+  } else if (password.value !== password2.value) {
     setErrorFor(password2, "Passwords do not match");
   } else {
     setSuccessFor(password2);
