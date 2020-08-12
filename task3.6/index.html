@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3.4.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <form action="" id="form">
+        <div class="header">
+          <h1>Create an account</h1>
+        </div>
+        <div class="username">
+          <h3>Personal Data</h3>
+          <div class="form-control">
+            <input
+              type="text"
+              id="username"
+              class="username"
+              placeholder="Username"
+            />
+            <small></small>
+          </div>
+
+          <div class="form-control">
+            <input
+              type="password"
+              id="password"
+              class="password"
+              placeholder="Password"
+            />
+            <small></small>
+          </div>
+
+          <div class="form-control">
+            <input
+              type="password"
+              id="password2"
+              class="password2"
+              placeholder="Confirm your password"
+            />
+            <small></small>
+          </div>
+
+          <div class="form-control">
+            <input type="text" id="email" class="email" placeholder="E-mail" />
+            <small></small>
+          </div>
+        </div>
+
+        <h3>Preferred lodgings</h3>
+        <div class="chexkboxes form-control">
+          <input type="checkbox" id="one" value="Fire Cabins" name="prefer" />
+          <label for="one">
+            <i class="far fa-check-square"></i> Fire Cabins</label
+          >
+          <input
+            type="checkbox"
+            id="two"
+            value="Horseshoe Cabins"
+            name="prefer"
+          />
+          <label for="two"
+            ><i class="far fa-check-square"></i> Horseshoe Cabins</label
+          >
+          <input
+            type="checkbox"
+            id="three"
+            value="Spruce Cabins"
+            name="prefer"
+          />
+          <label for="three"
+            ><i class="far fa-check-square"></i> Spruce Cabins</label
+          >
+          <input
+            type="checkbox"
+            id="four"
+            value="Ursa Major Cabins"
+            name="prefer"
+          />
+          <label for="four"
+            ><i class="far fa-check-square"></i> Ursa Major Cabins</label
+          >
+          <input
+            type="checkbox"
+            id="five"
+            value="Bear Meadow Campground"
+            name="prefer"
+          />
+          <label for="five"
+            ><i class="far fa-check-square"></i> Bear Meadow Campground</label
+          >
+          <input
+            type="checkbox"
+            id="six"
+            value="Lakeside Campground"
+            name="prefer"
+          />
+          <label for="six"
+            ><i class="far fa-check-square"></i> Lakeside Campground</label
+          >
+          <input
+            type="checkbox"
+            id="seven"
+            value="Leadfood Campground"
+            name="prefer"
+          />
+          <label for="seven"
+            ><i class="far fa-check-square"></i> Leadfood Campground</label
+          >
+          <input
+            type="checkbox"
+            id="eight"
+            value="Talus Campground"
+            name="prefer"
+          />
+          <label for="eight"
+            ><i class="far fa-check-square"></i> Talus Campground</label
+          >
+          <small></small>
+        </div>
+
+        <button type="submit" id="btn" class="btn">Create</button>
+      </form>
+      <div class="output">
+        <div class="data">
+          <h3>Username:</h3>
+          <div class="username-out"></div>
+
+          <h3>Email address:</h3>
+          <div class="email-out"></div>
+
+          <h3>Preferred lodgings:</h3>
+          <div class="details-out"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
