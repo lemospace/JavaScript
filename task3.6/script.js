@@ -2,67 +2,59 @@ var btn = document.getElementById("btn");
 var form = document.getElementById("form");
 var username = document.getElementById("username");
 var email = document.getElementById("email");
-var usernameValue = document.getElementById("username").value.trim();
-var emailValue = document.getElementById("email").value.trim();
 var password = document.getElementById("password");
 var password2 = document.getElementById("password2");
-var passwordValue = document.getElementById("password").value.trim();
-var password2Value = document.getElementById("password2").value.trim();
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   checkInputs();
 
-  var username = document.getElementById("username");
-  var email = document.getElementById("email");
   var usernameValue = document.getElementById("username").value.trim();
   var emailValue = document.getElementById("email").value.trim();
-  var password = document.getElementById("password");
-  var password2 = document.getElementById("password2");
   var passwordValue = document.getElementById("password").value.trim();
   var password2Value = document.getElementById("password2").value.trim();
-
   var prefers = document.querySelectorAll('input[type="checkbox"]:checked');
   var usernameOut = document.querySelector(".username-out");
   var emailOut = document.querySelector(".email-out");
   var detailsOut = document.querySelector(".details-out");
 
   class User {
-    constructor(usernameValue, passwordValue, password2Value, emailValue) {
+    constructor(
+      usernameValue,
+      passwordValue,
+      password2Value,
+      emailValue,
+      prefers
+    ) {
       this.usernameValue = usernameValue;
       this.passwordValue = passwordValue;
       this.password2Value = password2Value;
       this.emailValue = emailValue;
+      this.prefers = prefers;
     }
 
     getData() {
       usernameOut.innerHTML = usernameValue;
       emailOut.innerHTML = emailValue;
-      return this;
-    }
-  }
-
-  let user = new User(usernameValue, passwordValue, password2Value, emailValue);
-  console.log(user.getData());
-
-  class Details {
-    constructor(prefers) {
-      this.prefers = prefers;
-    }
-    getDetails() {
       for (var prefer of prefers) {
         var preferDiv = document.createElement("div");
         preferDiv.className = "pref";
         detailsOut.appendChild(preferDiv);
         preferDiv.append(prefer.value);
       }
-
       return this;
     }
   }
-  let details = new Details(prefers);
-  console.log(details.getDetails());
+
+  let user = new User(
+    usernameValue,
+    passwordValue,
+    password2Value,
+    emailValue,
+    prefers
+  );
+  console.log(user.getData());
 });
 
 function checkInputs() {
@@ -70,7 +62,6 @@ function checkInputs() {
   var emailValue = email.value.trim();
   var passwordValue = password.value.trim();
   var password2Value = password2.value.trim();
-  var usernameOut = document.querySelector(".username-out");
 
   if (usernameValue === "") {
     setErrorFor(username, "Username can not be blank");
