@@ -14,6 +14,15 @@ form.addEventListener("submit", function (e) {
 
   checkInputs();
 
+  var username = document.getElementById("username");
+  var email = document.getElementById("email");
+  var usernameValue = document.getElementById("username").value.trim();
+  var emailValue = document.getElementById("email").value.trim();
+  var password = document.getElementById("password");
+  var password2 = document.getElementById("password2");
+  var passwordValue = document.getElementById("password").value.trim();
+  var password2Value = document.getElementById("password2").value.trim();
+
   var prefers = document.querySelectorAll('input[type="checkbox"]:checked');
   var usernameOut = document.querySelector(".username-out");
   var emailOut = document.querySelector(".email-out");
@@ -21,15 +30,15 @@ form.addEventListener("submit", function (e) {
 
   class User {
     constructor(usernameValue, passwordValue, password2Value, emailValue) {
-      this.usernameValue = username.value;
-      this.passwordValue = password.value;
-      this.password2Value = password2.value;
-      this.emailValue = email.value;
+      this.usernameValue = usernameValue;
+      this.passwordValue = passwordValue;
+      this.password2Value = password2Value;
+      this.emailValue = emailValue;
     }
 
     getData() {
-      usernameOut.innerHTML = username.value;
-      emailOut.innerHTML = email.value;
+      usernameOut.innerHTML = usernameValue;
+      emailOut.innerHTML = emailValue;
       return this;
     }
   }
@@ -126,5 +135,5 @@ function isPassword(password) {
   return /^(?=.*\d).{8,}$/.test(password);
 }
 function isUsername(username) {
-  return /^[a-z0-9_-]{4}$/.test(username);
+  return /^[a-z0-9_-]{4,}$/.test(username);
 }
