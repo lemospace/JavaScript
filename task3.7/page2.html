@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3.7.</title>
+
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <form action="result.html" id="form2">
+        <input type="hidden" id="name" class="name" name="Name" />
+        <input type="hidden" id="email" class="email" name="Email" />
+        <input type="hidden" id="phone" class="phone" name="Phone" />
+        <input type="hidden" id="address" class="address" name="Address" />
+        <input type="hidden" id="city" class="city" name="City" />
+        <input type="hidden" id="state" class="state" name="State" />
+        <input type="hidden" id="zip" class="zip" name="Zip" />
+
+        <div class="header">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="bar">
+          <span class="page1"
+            >Your info <span class="page2">Your preferences </span></span
+          >
+        </div>
+        <h3>Food allergies</h3>
+        <textarea rows="5" id="allerg" class="allerg"> </textarea>
+
+        <h3>Frequency</h3>
+        <div class="freq">
+          <input
+            type="radio"
+            id="week"
+            name="frequency"
+            value="Weekly"
+            required
+          />
+          <label for="week">Weekly</label>
+          <input type="radio" id="biweek" name="frequency" value="Biweekly" />
+          <label for="biweek">Biweekly</label>
+          <input type="radio" id="month" name="frequency" value="Monthly" />
+          <label for="month">Monthly</label>
+        </div>
+
+        <h3>Package size</h3>
+        <div class="pack">
+          <input
+            type="radio"
+            id="taste"
+            name="package"
+            value="Taste test"
+            required
+          />
+          <label for="taste">Taste test</label>
+          <input
+            type="radio"
+            id="health"
+            name="package"
+            value="Healthy Highlight"
+          />
+          <label for="health">Healthy Highlight</label>
+          <input type="radio" id="full" name="package" value="Full plate" />
+          <label for="full">Full plate</label>
+        </div>
+
+        <button type="submit" id="signUp" class="signUp">Sign Up</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
