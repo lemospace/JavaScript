@@ -20,7 +20,7 @@ window.onload = () => {
   //var inputCity = document.getElementById("city");
   //var inputState = document.getElementById("state");
   //var inputZip = document.getElementById("zip");
-  //
+
   //inputName.value = name;
   //inputEmail.value = email;
   //inputPhone.value = phone;
@@ -29,14 +29,14 @@ window.onload = () => {
   //inputState.value = state;
   //inputZip.value = zip;
 
-  var hiddenData = document.querySelector(".hidden");
-
   for (var i = 0; i < data.length; i++) {
-    var p = document.createElement("p");
+    var hiddenInputs = document.createElement("INPUT");
+    hiddenInputs.setAttribute("type", "hidden");
+    hiddenInputs.setAttribute("name", data[i].split("=")[0]);
+    document.querySelector(".hidden").append(hiddenInputs);
 
     var value = decodeURIComponent(data[i].split("=")[1]);
 
-    p.append(value);
-    hiddenData.appendChild(p);
+    hiddenInputs.append(value);
   }
 };
