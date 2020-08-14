@@ -1,42 +1,18 @@
 var str;
 window.onload = () => {
   str = decodeURIComponent(location.search);
-  str = str.slice(1);
-  var data = str.split("&");
+
+  var data = str.slice(1).split("&");
   console.log(data);
-
-  //var name = data[0].split("=")[1];
-  //var email = data[1].split("=")[1];
-  //var phone = data[2].split("=")[1];
-  //var address = data[3].split("=")[1];
-  //var city = data[4].split("=")[1];
-  //var state = data[5].split("=")[1];
-  //var zip = data[6].split("=")[1];
-  //
-  //var inputName = document.getElementById("name");
-  //var inputEmail = document.getElementById("email");
-  //var inputPhone = document.getElementById("phone");
-  //var inputAddress = document.getElementById("address");
-  //var inputCity = document.getElementById("city");
-  //var inputState = document.getElementById("state");
-  //var inputZip = document.getElementById("zip");
-
-  //inputName.value = name;
-  //inputEmail.value = email;
-  //inputPhone.value = phone;
-  //inputAddress.value = address;
-  //inputCity.value = city;
-  //inputState.value = state;
-  //inputZip.value = zip;
 
   for (var i = 0; i < data.length; i++) {
     var hiddenInputs = document.createElement("INPUT");
     hiddenInputs.setAttribute("type", "hidden");
     hiddenInputs.setAttribute("name", data[i].split("=")[0]);
+    hiddenInputs.setAttribute(
+      "value",
+      decodeURIComponent(data[i].split("=")[1])
+    );
     document.querySelector(".hidden").append(hiddenInputs);
-
-    var value = decodeURIComponent(data[i].split("=")[1]);
-
-    hiddenInputs.append(value);
   }
 };
