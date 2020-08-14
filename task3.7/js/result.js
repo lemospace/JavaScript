@@ -1,9 +1,9 @@
 var str;
 window.onload = () => {
   str = decodeURIComponent(location.search);
-
   str = str.slice(1);
   var data = str.split("&");
+  console.log(data);
 
   var dataDiv = document.querySelector(".data");
 
@@ -13,7 +13,7 @@ window.onload = () => {
     var value = decodeURIComponent(data[i].split("=")[1]);
     var text = document.createTextNode(key + ": " + value);
 
-    p.appendChild(text);
+    p.append(text);
     dataDiv.appendChild(p);
   }
 };
