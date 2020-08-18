@@ -1,0 +1,139 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #487eb0;
+}
+
+.container {
+  margin: 40px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  background: #eee;
+}
+
+.container form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.container form input {
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  border: 2px solid   #487eb0;
+  border-radius: 5px;
+  color: #192a56;
+}
+
+.container form button {
+  width: 100%;
+  height: 40px;
+}
+
+.container form .header {
+  color: #192a56;
+  margin-bottom: 30px;
+}
+
+.container form h3 {
+  margin: 13px 0;
+}
+
+.container form .date {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc(50% - 5px) calc(50% - 5px);
+      grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+  grid-gap: 10px;
+}
+
+.container form .date label {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.container form .date input {
+  margin-bottom: 0;
+}
+
+.container form .payment .methods {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  margin-bottom: 15px;
+  grid-gap: 1px;
+}
+
+.container form .payment .methods .cc {
+  font-size: 18px;
+}
+
+.container form .payment .methods input {
+  display: none;
+}
+
+.container form .payment .methods label {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid #487eb0;
+}
+
+.container form .payment .methods label:hover {
+  outline: 1px solid #487eb0;
+  color: #192a56;
+}
+
+.container form .payment .methods input:checked + label {
+  background: #487eb0;
+  color: #fff;
+}
+
+.container form .payment .details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc(60% - 3px) calc(20% - 3px) calc(20% - 5px);
+      grid-template-columns: calc(60% - 3px) calc(20% - 3px) calc(20% - 5px);
+  grid-gap: 6px;
+}
+
+.container form .discount .descr {
+  font-size: 14px;
+  color: #747474;
+  margin-bottom: 15px;
+}
+
+.container form button {
+  border: 2px solid   #487eb0;
+  background: #487eb0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.container form button:hover {
+  -webkit-box-shadow: 0px 0px 0px 1px #487eb0;
+          box-shadow: 0px 0px 0px 1px #487eb0;
+  color: #192a56;
+  overflow: hidden;
+}
+/*# sourceMappingURL=style.css.map */

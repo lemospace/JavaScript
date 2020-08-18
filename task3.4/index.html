@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3.4.</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" id="form">
+        <div class="header">
+          <h1>Customer Page</h1>
+        </div>
+        <div class="username">
+          <h3>Personal Data</h3>
+          <div class="fName">
+            <input
+              type="text"
+              id="fName"
+              class="fName"
+              placeholder="First name"
+            />
+          </div>
+          <div class="sName">
+            <input
+              type="text"
+              id="sName"
+              class="sName"
+              placeholder="Second name"
+            />
+          </div>
+        </div>
+        <h3>Date of Purchase</h3>
+        <div class="date">
+          <div class="firstBuy">
+            <input type="date" id="fb" class="fb" />
+            <label for="fb">First Buy</label>
+          </div>
+          <div class="nextBuy">
+            <input type="date" id="nb" class="nb" />
+            <label for="nb">Next Buy</label>
+          </div>
+        </div>
+        <div class="payment">
+          <h3>Payment Details</h3>
+          <div class="methods">
+            <input type="radio" id="cc" name="method" value="Credit Card" required/>
+            <label for="cc" class="cc">
+              <i class="fas fa-credit-card"></i> Credit Card</label
+            >
+            <input type="radio" id="pp" name="method" value="Paypal" />
+            <label for="pp"> <i class="fab fa-cc-paypal"></i> Paypal</label>
+            <input type="radio" id="cash" name="method" value="Cash"/>
+            <label for="cash">
+              <i class="fas fa-money-bill-wave"></i> Cash</label
+            >
+          </div>
+          <div class="cardNumber">
+            <input type="number" placeholder="Card Number" id="cardNumber" />
+          </div>
+          <div class="details">
+            <input type="number" id="cvc" maxlength="3" placeholder="Card CVC" />
+            <input type="number" id="mm" maxlength="2" placeholder="MM" />
+            <input type="number" id="yy" maxlength="2" placeholder="YY" />
+          </div>
+        </div>
+        <div class="discount">
+          <h3>Discount</h3>
+          <p class="descr">You will get discount of 5% after your first order. You may calculate below your next order price with your discount.
+          </p>
+          <input
+            type="number"
+            min="0"
+            step="0.01"
+            class="form-control"
+            id="price"
+            placeholder="Price"
+          />
+          
+          <p><h4 id="cdiscount"></h4></p>
+          <p><h4 id="newprice"></h4></p>
+        </div>
+        <button type="submit" id="btn" class="btn">Submit</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 5 - About us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="../general/general.css" />
+    <link rel="stylesheet" href="order.css" />
+    <link rel="stylesheet" href="../jquery-ui.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <img src="../images/header-image.jpg" alt="" />
+      </header>
+      <aside class="aside aside-1">
+        <div class="nav home">
+          <a href="../index.html">
+            <img src="https://img.icons8.com/ios/50/000000/home-page.png"
+          /></a>
+          <p>Home page</p>
+        </div>
+        <div class="nav about-us">
+          <a href="index.html">
+            <img src="https://img.icons8.com/ios/50/000000/info.png"
+          /></a>
+          <p>About us</p>
+        </div>
+        <div class="nav contact">
+          <a href="../contact/index.html">
+            <img src="https://img.icons8.com/ios/50/000000/phone-message.png"
+          /></a>
+          <p>Contact</p>
+        </div>
+      </aside>
+      <div class="main">
+        <div class="container">
+          <div class="form-header">
+            <h1>Complete Order</h1>
+          </div>
+          <form id="form" class="form">
+            <div class="model">
+              <h2>Item</h2>
+              <div class="form-control">
+                <label for="longboards">Choose a longboard:</label>
+                <select name="longboards" id="longboards" class="field">
+                  <option value=""></option>
+                  <option value="Longboard Waves Bambino '26"
+                    >Longboard Waves Bambino '26</option
+                  >
+                  <option value="Longboard Waves Bamboostick '29"
+                    >Longboard Waves Bamboostick '29</option
+                  >
+                  <option value="Longboard Waves Soul Surfer '36"
+                    >Longboard Waves Soul Surfer '36
+                  </option>
+                  <option value="Longboard Arbor Pilsner Foundation `29"
+                    >Longboard Arbor Pilsner Foundation `29
+                  </option>
+                  <option value="Longboard Waves Sky Walker '43"
+                    >Longboard Waves Sky Walker '43</option
+                  >
+                </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+
+              <div class="comments">
+                <textarea
+                  name=""
+                  id="comm"
+                  cols="30"
+                  rows="3"
+                  placeholder="Your comments"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="billing-address">
+              <h2>Billing address</h2>
+
+              <div class="form-control">
+                <label for="f-name1">First name </label>
+                <input type="text" id="f-name1" class="field" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="s-name1">Second name </label>
+                <input type="text" id="s-name1" class="field" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="street1">Street address </label>
+                <input type="text" id="street1" class="field" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="state1">State or Region </label>
+                <select name="" id="state1" class="field">
+                  <option value=""></option>
+                  <option value="Kharkiv">Kharkiv</option>
+                  <option value="Kyiv">Kyiv</option>
+                  <option value="Lviv">Lviv</option>
+                  <option value="Odessa">Odessa</option>
+                </select>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="zip1">Zip </label>
+                <input type="text" id="zip1" class="field" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="phone1">Phone </label
+                ><input
+                  type="tel"
+                  id="phone1"
+                  placeholder="+380XXXXXXXXX"
+                  class="number field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+            </div>
+
+            <div class="delivery-address">
+              <h2>Delivery address</h2>
+              <div class="same">
+                <label>Same as my billing address </label>
+                <input type="checkbox" id="same" />
+              </div>
+              <div class="hide">
+                <div class="form-control">
+                  <label for="f-name">First name </label>
+                  <input type="text" id="f-name" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="s-name">Second name </label>
+                  <input type="text" id="s-name" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="street">Street address </label>
+                  <input type="text" id="street" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="state">State or Region </label>
+                  <select name="" id="state" class="field">
+                    <option value=""></option>
+                    <option value="Kharkiv">Kharkiv</option>
+                    <option value="Kyiv">Kyiv</option>
+                    <option value="Lviv">Lviv</option>
+                    <option value="Odessa">Odessa</option>
+                  </select>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="zip">Zip </label>
+                  <input type="text" id="zip" class="field" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control">
+                  <label for="phone">Phone </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+380XXXXXXXXX"
+                    class="number field"
+                  />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="delivery-date form-control">
+              <h2>Delivery date</h2>
+              <select name="" id="year">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+              </select>
+              <select name="" id="month">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">Novenmer</option>
+                <option value="11">December</option>
+              </select>
+              <select name="" id="day"> </select>
+              <small></small>
+            </div>
+
+            <div class="payment">
+              <h2>
+                Payment Details
+              </h2>
+              <div class="form-control">
+                <label for="cardNumber">
+                  CARD NUMBER
+                </label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  placeholder="Valid Card Number"
+                  autofocus
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label>
+                  EXPIRY DATE
+                </label>
+                <input
+                  type="text"
+                  id="expityMonth"
+                  placeholder="MM"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control yy">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="expityYear"
+                  placeholder="YY"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+
+              <div class="form-control">
+                <label for="cvCode">
+                  CV CODE
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="cvCode"
+                  placeholder="CVV"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+            </div>
+
+            <div class="create-account">
+              <h2>Create account?</h2>
+              <div class="form-control">
+                <label for="username">Username</label>
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="username"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="password"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="password2">Confirm your password</label>
+                <input
+                  id="password2"
+                  type="password"
+                  placeholder="confirm password"
+                  class="field"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+            </div>
+
+            <button type="submit" id="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="aside aside-2"></aside>
+      <footer class="footer">
+        <div>
+          &copy; lemospace | 2020
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="script.js"></script>
+
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+  </body>
+</html>
